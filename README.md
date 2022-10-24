@@ -22,7 +22,7 @@ npm install
 npm run dev
 ```
 
-[Screenshot-file]: public/screenshot.png
+[Screenshot-file]: public/mainpage-screenshot.png
 [Vue-logo]: https://img.shields.io/badge/Vue.js-4fc08d?style=for-the-badge&logo=vue.js&logoColor=white
 [Vue-link]: https://vuejs.org/
 
