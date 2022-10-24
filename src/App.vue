@@ -39,18 +39,18 @@ export default {
 
 <style scoped>
 h1 {
-  font-size: 60px;
-  margin-bottom: 65px;
+  font-size: 80px;
+  margin-bottom: 75px;
 }
 
 p {
-  font-size: 40px;
+  font-size: 60px;
 }
 
 input {
   border-radius: 5px;
-  height: 50px;
-  font-size: 35px;
+  height: 70px;
+  font-size: 55px;
   text-align: center;
 }
 </style>
