@@ -2,23 +2,30 @@
 export default {
   data() {
     return {
-      binary: "",
-      result: "",
+      from: "Binary",
+      to: "Decimal",
+      fromValue: "",
+      toValue: "",
     };
   },
   methods: {
     validateInput() {
-      const regex = new RegExp("^[01]+$", "g");
-      if (!this.binary) {
-        this.result = "";
-      } else if (regex.test(this.binary)) {
-        this.convertBinary();
+      let regex;
+      if(this.to == "Decimal") {
+        regex = new RegExp("^[01]+$", "g");
       } else {
-        this.result = "Invalid input!";
+        regex = new RegExp("^[0-9]+$", "g");
+      }
+      if (!this.fromValue) {
+        this.toValue = "";
+      } else if (regex.test(this.fromValue)) {
+        this.to == "Decimal" ? this.convertBinary() : this.convertDecimal();
+      } else {
+        this.toValue = "Invalid input!";
       }
     },
     convertBinary() {
-      this.result = this.binary
+      this.toValue = this.fromValue
         .split("")
         .map((n) => parseInt(n))
         .reverse()
@@ -27,8 +34,26 @@ export default {
             total + currentBinary * Math.pow(2, index)
         );
     },
+    convertDecimal() {
+      let decimal = parseInt(this.fromValue);
+      this.toValue = "";
+      while(decimal > 0) {
+        let binary = decimal % 2;
+        decimal = Math.floor(decimal / 2);
+        this.toValue = binary + this.toValue;
+      }
+    },
     swapUnits() {
-      console.log("Swap pressed.");
+      let swapValue = this.fromValue;
+      this.fromValue = this.toValue;
+      this.toValue = swapValue;
+      let swapUnit = this.from;
+      this.from = this.to;
+      this.to = swapUnit;
+    },
+    resetValues() {
+      this.fromValue = "";
+      this.toValue = "";
     }
   },
 };
@@ -37,14 +62,15 @@ export default {
 <template>
   <h1>Number Converter</h1>
   <div class="flex flex-center convertion-block">
-    <p>Binary</p>
-    <input v-model="binary" @input="validateInput" />
+    <p>{{ this.from }}</p>
+    <input v-model="fromValue" @input="validateInput" />
   </div>
   <div class="convertion-block">
-    <img src="swap.svg" @click="swapUnits" />
+    <img src="swap.svg" title="Swap units" @click="swapUnits" />
+    <img src="reset.svg" title="Reset values" @click="resetValues" />
   </div>
   <div class="flex flex-center convertion-block">
-    <p>Decimal</p>
-    <input v-model="result" disabled />
+    <p>{{ this.to }}</p>
+    <input v-model="toValue" disabled />
   </div>
 </template>
