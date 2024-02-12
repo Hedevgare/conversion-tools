@@ -14,3 +14,45 @@ body {
   background-color: #2e2e3a;
   color: #ffffff;
 }
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.convertion-block {
+  width: 400px;
+  margin: auto;
+  text-align: left;
+}
+
+.convertion-block>* {
+  flex: 1;
+  font-size: 20px;
+}
+
+img {
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+input {
+  border-radius: 5px;
+  height: 30px;
+  text-align: center;
+  border-color: gray;
+  margin-left: 10px;
+}
+
+input:disabled {
+  background-color: #9e9e9e;
+  color: black;
+}
+
+input:focus {
+  outline: none;
+}

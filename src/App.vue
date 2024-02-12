@@ -3,14 +3,14 @@ export default {
   data() {
     return {
       binary: "",
-      result: "Enter your binary number",
+      result: "",
     };
   },
   methods: {
     validateInput() {
       const regex = new RegExp("^[01]+$", "g");
       if (!this.binary) {
-        this.result = "Enter your binary number";
+        this.result = "";
       } else if (regex.test(this.binary)) {
         this.convertBinary();
       } else {
@@ -27,30 +27,24 @@ export default {
             total + currentBinary * Math.pow(2, index)
         );
     },
+    swapUnits() {
+      console.log("Swap pressed.");
+    }
   },
 };
 </script>
 
 <template>
-  <h1>Bin2Dec</h1>
-  <input v-model="binary" @input="validateInput" />
-  <p>{{ result }}</p>
+  <h1>Number Converter</h1>
+  <div class="flex flex-center convertion-block">
+    <p>Binary</p>
+    <input v-model="binary" @input="validateInput" />
+  </div>
+  <div class="convertion-block">
+    <img src="swap.svg" @click="swapUnits" />
+  </div>
+  <div class="flex flex-center convertion-block">
+    <p>Decimal</p>
+    <input v-model="result" disabled />
+  </div>
 </template>
-
-<style scoped>
-h1 {
-  font-size: 80px;
-  margin-bottom: 75px;
-}
-
-p {
-  font-size: 60px;
-}
-
-input {
-  border-radius: 5px;
-  height: 70px;
-  font-size: 55px;
-  text-align: center;
-}
-</style>
