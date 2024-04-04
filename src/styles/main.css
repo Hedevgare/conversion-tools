@@ -5,14 +5,42 @@
 }
 
 body {
+  margin: 0;
+}
+
+hr {
+  width: 95vw;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#app {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: center;
   height: 100vh;
-  margin: auto;
   background-color: #2e2e3a;
   color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.header-link {
+  margin: 15px 30px;
+}
+
+.header-link:hover {
+  cursor: pointer;
+} 
+
+.body {
+  text-align: center;
+  margin: auto;
 }
 
 .flex {
