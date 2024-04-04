@@ -37,10 +37,11 @@ export default {
     convertDecimal() {
       let decimal = parseInt(this.fromValue);
       this.toValue = "";
-      while(decimal > 0) {
+      while(decimal >= 0) {
         let binary = decimal % 2;
         decimal = Math.floor(decimal / 2);
         this.toValue = binary + this.toValue;
+        if(decimal === 0) break; // Break the loop to prevent infinite loop once the decimal value reaches 0.
       }
     },
     swapUnits() {
