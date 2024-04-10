@@ -9,9 +9,7 @@ body {
 }
 
 hr {
-  width: 95vw;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 30px;
 }
 
 h1 {
@@ -69,6 +67,10 @@ input:focus {
 .body {
   text-align: center;
   margin: auto;
+}
+
+.footer {
+  text-align: center;
 }
 
 .flex {

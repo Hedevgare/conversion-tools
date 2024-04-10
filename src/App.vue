@@ -5,4 +5,7 @@
   </div>
   <hr />
   <RouterView />
+  <div class="footer">
+    <p>Hedegare - 2024</p>
+  </div>
 </template>
