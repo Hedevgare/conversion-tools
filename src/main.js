@@ -4,8 +4,8 @@ import App from "./App.vue";
 
 import "./styles/main.css";
 
-import LengthConverter from "./components/LengthConverter.vue";
-import NumberConverter from "./components/NumberConverter.vue";
+import LengthConverter from "./pages/LengthConverter.vue";
+import NumberConverter from "./pages/NumberConverter.vue";
 
 const routes = [
     { path: '/', component: NumberConverter },

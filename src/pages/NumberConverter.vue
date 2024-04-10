@@ -1,17 +1,22 @@
 <script>
+import Dropdown from '../components/Dropdown.vue';
+
 export default {
+  components: {
+    'dropdown': Dropdown
+  },
   data() {
     return {
       from: "Binary",
       to: "Decimal",
       fromValue: "",
-      toValue: "",
+      toValue: ""
     };
   },
   methods: {
     validateInput() {
       let regex;
-      if(this.to == "Decimal") {
+      if (this.to == "Decimal") {
         regex = new RegExp("^[01]+$", "g");
       } else {
         regex = new RegExp("^[0-9]+$", "g");
@@ -37,11 +42,11 @@ export default {
     convertDecimal() {
       let decimal = parseInt(this.fromValue);
       this.toValue = "";
-      while(decimal >= 0) {
+      while (decimal >= 0) {
         let binary = decimal % 2;
         decimal = Math.floor(decimal / 2);
         this.toValue = binary + this.toValue;
-        if(decimal === 0) break; // Break the loop to prevent infinite loop once the decimal value reaches 0.
+        if (decimal === 0) break; // Break the loop to prevent infinite loop once the decimal value reaches 0.
       }
     },
     swapUnits() {
@@ -55,6 +60,9 @@ export default {
     resetValues() {
       this.fromValue = "";
       this.toValue = "";
+    },
+    log(msg) {
+      console.log(msg)
     }
   },
 };
@@ -64,7 +72,12 @@ export default {
   <section class="body">
     <h1>Number Converter</h1>
     <div class="flex flex-center convertion-block">
-      <p>{{ this.from }}</p>
+      <div class="relative flex-column">
+        <div class="flex unit-label" @click="() => this.$refs.dropdownFrom.toggle()">
+          <p class="flex-1">{{ this.from }}</p><i class="dropdown-arrow"></i>
+        </div>
+        <dropdown ref="dropdownFrom" />
+      </div>
       <input v-model="fromValue" @input="validateInput" />
     </div>
     <div class="convertion-block">
@@ -72,7 +85,12 @@ export default {
       <img src="reset.svg" title="Reset values" @click="resetValues" />
     </div>
     <div class="flex flex-center convertion-block">
-      <p>{{ this.to }}</p>
+      <div class="relative flex-column">
+        <div class="flex unit-label" @click="() => this.$refs.dropdownTo.toggle()">
+          <p class="flex-1">{{ this.to }}</p><i class="dropdown-arrow"></i>
+        </div>
+        <dropdown ref="dropdownTo" />
+      </div>
       <input v-model="toValue" disabled />
     </div>
   </section>
