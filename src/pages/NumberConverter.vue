@@ -81,8 +81,8 @@ export default {
       <input v-model="fromValue" @input="validateInput" />
     </div>
     <div class="convertion-block">
-      <img src="swap.svg" title="Swap units" @click="swapUnits" />
-      <img src="reset.svg" title="Reset values" @click="resetValues" />
+      <img src="/swap.svg" title="Swap units" @click="swapUnits" />
+      <img src="/reset.svg" title="Reset values" @click="resetValues" />
     </div>
     <div class="flex flex-center convertion-block">
       <div class="relative flex-column">
