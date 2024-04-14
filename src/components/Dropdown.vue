@@ -1,5 +1,6 @@
 <script>
 export default {
+    props: ['active'],
     data() {
         return {
             show: false
@@ -15,8 +16,9 @@ export default {
 
 <template>
     <div v-if="show" class="dropdown">
-        <p>dropdown1</p>
-        <p>dropdown2</p>
-        <p>dropdown3</p>
+        <p :class="{'active-dropdown' : $props.active == 'Binary'}" @click="toggle">Binary</p>
+        <p :class="{'active-dropdown' : $props.active == 'Octal'}" @click="toggle">Octal</p>
+        <p :class="{'active-dropdown' : $props.active == 'Decimal'}" @click="toggle">Decimal</p>
+        <p :class="{'active-dropdown' : $props.active == 'Hexadecimal'}" @click="toggle">Hexadecimal</p>
     </div>
 </template>

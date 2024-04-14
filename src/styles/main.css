@@ -114,11 +114,17 @@ input:focus {
   border: 1px #000000 solid;
   position: absolute;
   width: 100%;
+  font-size: 16px;
   z-index: 1;
 }
 
 .dropdown>p {
   margin: 5px 10px;
+  cursor: pointer;
+}
+
+.dropdown>p:hover {
+  text-decoration: underline;
 }
 
 .dropdown-arrow {
@@ -128,6 +134,10 @@ input:focus {
   padding: 3px;
   transform: rotate(45deg);
   margin: auto;
+}
+
+.active-dropdown {
+  color: red;
 }
 
 .relative {

@@ -39,6 +39,9 @@ export default {
             total + currentBinary * Math.pow(2, index)
         );
     },
+    convertOctal() {
+
+    },
     convertDecimal() {
       let decimal = parseInt(this.fromValue);
       this.toValue = "";
@@ -48,6 +51,9 @@ export default {
         this.toValue = binary + this.toValue;
         if (decimal === 0) break; // Break the loop to prevent infinite loop once the decimal value reaches 0.
       }
+    },
+    convertHexadecimal() {
+
     },
     swapUnits() {
       let swapValue = this.fromValue;
@@ -76,7 +82,7 @@ export default {
         <div class="flex unit-label" @click="() => this.$refs.dropdownFrom.toggle()">
           <p class="flex-1">{{ this.from }}</p><i class="dropdown-arrow"></i>
         </div>
-        <dropdown ref="dropdownFrom" />
+        <dropdown ref="dropdownFrom" active="Binary" />
       </div>
       <input v-model="fromValue" @input="validateInput" />
     </div>
@@ -89,7 +95,7 @@ export default {
         <div class="flex unit-label" @click="() => this.$refs.dropdownTo.toggle()">
           <p class="flex-1">{{ this.to }}</p><i class="dropdown-arrow"></i>
         </div>
-        <dropdown ref="dropdownTo" />
+        <dropdown ref="dropdownTo" active="Decimal" />
       </div>
       <input v-model="toValue" disabled />
     </div>
