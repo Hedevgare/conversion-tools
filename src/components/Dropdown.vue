@@ -9,6 +9,10 @@ export default {
     methods: {
         toggle() {
             this.show = !this.show;
+        },
+        changeUnit(unit) {
+            this.$emit('setUnit', unit);
+            this.toggle();
         }
     }
 }
@@ -16,9 +20,9 @@ export default {
 
 <template>
     <div v-if="show" class="dropdown">
-        <p :class="{'active-dropdown' : $props.active == 'Binary'}" @click="toggle">Binary</p>
-        <p :class="{'active-dropdown' : $props.active == 'Octal'}" @click="toggle">Octal</p>
-        <p :class="{'active-dropdown' : $props.active == 'Decimal'}" @click="toggle">Decimal</p>
-        <p :class="{'active-dropdown' : $props.active == 'Hexadecimal'}" @click="toggle">Hexadecimal</p>
+        <p :class="{'active-dropdown' : $props.active == 'Binary'}" @click="changeUnit('Binary')">Binary</p>
+        <p :class="{'active-dropdown' : $props.active == 'Octal'}" @click="changeUnit('Octal')">Octal</p>
+        <p :class="{'active-dropdown' : $props.active == 'Decimal'}" @click="changeUnit('Decimal')">Decimal</p>
+        <!-- <p :class="{'active-dropdown' : $props.active == 'Hexadecimal'}" @click="changeUnit('Hexadecimal')">Hexadecimal</p> -->
     </div>
 </template>
