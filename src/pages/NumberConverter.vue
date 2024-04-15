@@ -8,7 +8,7 @@ export default {
   },
   data() {
     return {
-      from: "Hexadecimal",
+      from: "Binary",
       to: "Decimal",
       fromValue: "",
       toValue: ""
