@@ -8,7 +8,7 @@ export default {
   },
   data() {
     return {
-      from: "Binary",
+      from: "Hexadecimal",
       to: "Decimal",
       fromValue: "",
       toValue: ""
@@ -27,6 +27,9 @@ export default {
         case "Decimal":
           regex = new RegExp("^[0-9]+$", "g");
           break;
+        case "Hexadecimal":
+          regex = new RegExp("^[0-9A-F]+$", "g");
+          break;
       }
       
       if (!this.fromValue) {
@@ -44,7 +47,7 @@ export default {
         } else if (this.to === "Decimal") {
           return convertions.binaryToDecimal(this.fromValue);
         } else if (this.to === "Hexadecimal") {
-
+          return convertions.binaryToHexadecimal(this.fromValue);
         }
       } else if (this.from === "Octal") {
         if (this.to === "Binary") {
@@ -52,7 +55,7 @@ export default {
         } else if (this.to === "Decimal") {
           return convertions.octalToDecimal(this.fromValue);
         } else if (this.to === "Hexadecimal") {
-
+          return convertions.octalToHexadecimal(this.fromValue);
         }
       } else if (this.from === "Decimal") {
         if (this.to === "Binary") {
@@ -60,15 +63,15 @@ export default {
         } else if (this.to === "Octal") {
           return convertions.decimalToOctal(this.fromValue);
         } else if (this.to === "Hexadecimal") {
-
+          return convertions.decimalToHexadecimal(this.fromValue);
         }
       } else if (this.from === "Hexadecimal") {
         if (this.to === "Binary") {
-
+          return convertions.hexadecimalToBinary(this.fromValue);
         } else if (this.to === "Octal") {
-
+          return convertions.hexadecimalToOctal(this.fromValue);
         } else if (this.to === "Decimal") {
-
+          return convertions.hexadecimalToDecimal(this.fromValue);
         }
       }
     },

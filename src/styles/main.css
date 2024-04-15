@@ -91,7 +91,7 @@ input:focus {
 }
 
 .convertion-block {
-  width: 400px;
+  width: 430px;
   margin: auto;
   text-align: left;
 }
@@ -112,6 +112,8 @@ input:focus {
 .dropdown {
   background-color: #1a1a25;
   border: 1px #000000 solid;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   position: absolute;
   width: 100%;
   font-size: 16px;
