@@ -97,7 +97,7 @@ export default {
 
 <template>
   <section class="body">
-    <h1>Number Converter</h1>
+    <h1 class="title">Number Converter</h1>
     <div class="flex flex-center convertion-block">
       <div class="relative flex-column">
         <div class="flex unit-label" @click="() => this.$refs.dropdownFrom.toggle()">

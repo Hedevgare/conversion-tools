@@ -6,6 +6,6 @@ export default {
 
 <template>
     <section class="body">
-        <h1>Lenght Converter</h1>
+        <h1 class="title">Length Converter</h1>
     </section>
 </template>
