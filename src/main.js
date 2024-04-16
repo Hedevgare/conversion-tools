@@ -8,8 +8,8 @@ import LengthConverter from "./pages/LengthConverter.vue";
 import NumberConverter from "./pages/NumberConverter.vue";
 
 const routes = [
-    { path: '/', component: NumberConverter },
-    { path: '/length', component: LengthConverter }
+    { path: '/number', component: NumberConverter },
+    { path: '/', component: LengthConverter }
 ];
 
 const router = createRouter({

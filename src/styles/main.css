@@ -37,6 +37,10 @@ input:disabled {
   color: black;
 }
 
+input:focus {
+  outline-color: #2e2e3a;
+}
+
 #app {
   display: flex;
   flex-direction: column;

@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: ['active'],
+    props: ['active', 'units'],
     data() {
         return {
             show: false
@@ -20,9 +20,6 @@ export default {
 
 <template>
     <div v-if="show" class="dropdown">
-        <p :class="{'active-dropdown' : $props.active == 'Binary'}" @click="changeUnit('Binary')">Binary</p>
-        <p :class="{'active-dropdown' : $props.active == 'Octal'}" @click="changeUnit('Octal')">Octal</p>
-        <p :class="{'active-dropdown' : $props.active == 'Decimal'}" @click="changeUnit('Decimal')">Decimal</p>
-        <p :class="{'active-dropdown' : $props.active == 'Hexadecimal'}" @click="changeUnit('Hexadecimal')">Hexadecimal</p>
+        <p v-for="unit in $props.units" :class="{'active-dropdown' : $props.active == unit}" @click="changeUnit(unit)">{{ unit }}</p>
     </div>
 </template>
