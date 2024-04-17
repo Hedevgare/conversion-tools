@@ -78,7 +78,7 @@ export default {
 		},
 		setUnit(type, unit) {
 			type === "from" ? this.from = unit : this.to = unit;
-			this.resetValues();
+			this.toValue = this.startConvertion(this.fromValue);
 		},
 		swapUnits() {
 			let swapValue = this.fromValue;
