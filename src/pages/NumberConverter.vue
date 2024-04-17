@@ -1,6 +1,6 @@
 <script>
 import Dropdown from '../components/Dropdown.vue';
-import * as convertions from '../helpers/numberConvertions';
+import { convertions } from "../helpers/convertions";
 
 export default {
 	components: {
@@ -42,39 +42,7 @@ export default {
 			}
 		},
 		startConvertion() {
-			if (this.from === "Binary") {
-				if (this.to === "Octal") {
-					return convertions.binaryToOctal(this.fromValue);
-				} else if (this.to === "Decimal") {
-					return convertions.binaryToDecimal(this.fromValue);
-				} else if (this.to === "Hexadecimal") {
-					return convertions.binaryToHexadecimal(this.fromValue);
-				}
-			} else if (this.from === "Octal") {
-				if (this.to === "Binary") {
-					return convertions.octalToBinary(this.fromValue);
-				} else if (this.to === "Decimal") {
-					return convertions.octalToDecimal(this.fromValue);
-				} else if (this.to === "Hexadecimal") {
-					return convertions.octalToHexadecimal(this.fromValue);
-				}
-			} else if (this.from === "Decimal") {
-				if (this.to === "Binary") {
-					return convertions.decimalToBinary(this.fromValue);
-				} else if (this.to === "Octal") {
-					return convertions.decimalToOctal(this.fromValue);
-				} else if (this.to === "Hexadecimal") {
-					return convertions.decimalToHexadecimal(this.fromValue);
-				}
-			} else if (this.from === "Hexadecimal") {
-				if (this.to === "Binary") {
-					return convertions.hexadecimalToBinary(this.fromValue);
-				} else if (this.to === "Octal") {
-					return convertions.hexadecimalToOctal(this.fromValue);
-				} else if (this.to === "Decimal") {
-					return convertions.hexadecimalToDecimal(this.fromValue);
-				}
-			}
+			return convertions[this.from][this.to](this.fromValue);
 		},
 		setUnit(type, unit) {
 			type === "from" ? this.from = unit : this.to = unit;

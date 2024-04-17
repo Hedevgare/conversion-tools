@@ -1,6 +1,6 @@
 <script>
 import Dropdown from '../components/Dropdown.vue';
-import * as convertions from '../helpers/lengthConvertions';
+import { convertions } from '../helpers/convertions';
 
 export default {
 	components: {
@@ -28,15 +28,7 @@ export default {
 			}
 		},
 		startConvertion() {
-			if (this.from === "Meters") {
-				if (this.to === "Feet") {
-					return convertions.metersToFeet(this.fromValue);
-				}
-			} else if (this.from === "Feet") {
-				if (this.to === "Meters") {
-					return convertions.feetToMeters(this.fromValue);
-				}
-			}
+			return convertions[this.from][this.to](this.fromValue);
 		},
 		setUnit(type, unit) {
 			type === "from" ? this.from = unit : this.to = unit;
