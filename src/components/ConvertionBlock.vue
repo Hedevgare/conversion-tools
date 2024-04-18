@@ -23,7 +23,7 @@ export default {
             if (!this.fromValue) {
                 this.toValue = "";
             } else if (regex.test(this.fromValue)) {
-                this.toValue = this.startConvertion();
+                this.from !== this.to ? this.toValue = this.startConvertion() : this.toValue = this.fromValue;
             } else {
                 this.toValue = "Invalid input!";
             }
@@ -33,7 +33,9 @@ export default {
         },
         setUnit(type, unit) {
             type === "from" ? this.from = unit : this.to = unit;
-            this.toValue = this.startConvertion(this.fromValue);
+            if (this.from !== this.to) {
+                this.toValue = this.startConvertion(this.fromValue);
+            }
         },
         swapUnits() {
             let swapValue = this.fromValue;
