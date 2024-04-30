@@ -1,11 +1,13 @@
 <script>
 import Dropdown from '../components/Dropdown.vue';
+import Input from './Input.vue';
 import { convertions } from "../helpers/convertions";
 import { regexValidation } from "../helpers/validations";
 
 export default {
     components: {
-        'dropdown': Dropdown
+        'dropdown': Dropdown,
+        'icon-input': Input
     },
     props: ["startFrom", "startTo", "units"],
     data() {
@@ -62,7 +64,7 @@ export default {
             <dropdown ref="dropdownFrom" :active="this.from" :units="this.units"
                 @set-unit="(unit) => setUnit('from', unit)" />
         </div>
-        <input v-model="fromValue" @input="validateInput" />
+        <icon-input v-model="fromValue" name="fromValue" @input="validateInput" />
     </div>
     <div class="convertion-block">
         <img src="/swap.svg" title="Swap units" @click="swapUnits" />
@@ -76,6 +78,6 @@ export default {
             <dropdown ref="dropdownTo" :active="this.to" :units="this.units"
                 @set-unit="(unit) => setUnit('to', unit)" />
         </div>
-        <input v-model="toValue" disabled />
+        <icon-input v-model="toValue" :disabled="true" />
     </div>
 </template>
