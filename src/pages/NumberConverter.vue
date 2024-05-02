@@ -1,8 +1,15 @@
 <script>
-import ConvertionBlock from '../components/ConvertionBlock.vue';
+import ConversionBlock from '../components/ConversionBlock.vue';
 export default {
 	components: {
-		'convertion-block': ConvertionBlock
+		'conversion-block': ConversionBlock
+	},
+	data() {
+		return {
+			units: ['Binary', 'Octal', 'Decimal', 'Hexadecimal'],
+			startFromUnit: 'Binary',
+			startToUnit: 'Decimal'
+		}
 	}
 }
 </script>
@@ -10,6 +17,6 @@ export default {
 <template>
 	<section class="body">
 		<h1 class="title">Number Converter</h1>
-		<convertion-block startFrom="Binary" startTo="Decimal" :units="['Binary', 'Octal', 'Decimal', 'Hexadecimal']" />
+		<conversion-block :startFrom="startFromUnit" :startTo="startToUnit" :units="units" />
 	</section>
 </template>

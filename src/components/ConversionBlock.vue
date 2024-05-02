@@ -1,7 +1,7 @@
 <script>
 import Dropdown from '../components/Dropdown.vue';
 import Input from './Input.vue';
-import { convertions } from "../helpers/convertions";
+import { conversions } from "../helpers/conversions";
 import { regexValidation } from "../helpers/validations";
 
 export default {
@@ -25,18 +25,18 @@ export default {
             if (!this.fromValue) {
                 this.toValue = "";
             } else if (regex.test(this.fromValue)) {
-                this.from !== this.to ? this.toValue = this.startConvertion() : this.toValue = this.fromValue;
+                this.from !== this.to ? this.toValue = this.startConversion() : this.toValue = this.fromValue;
             } else {
                 this.toValue = "Invalid input!";
             }
         },
-        startConvertion() {
-            return convertions[this.from][this.to](this.fromValue);
+        startConversion() {
+            return conversions[this.from][this.to](this.fromValue);
         },
         setUnit(type, unit) {
             type === "from" ? this.from = unit : this.to = unit;
             if (this.from !== this.to) {
-                this.toValue = this.startConvertion(this.fromValue);
+                this.toValue = this.startConversion(this.fromValue);
             }
         },
         swapUnits() {
@@ -56,7 +56,7 @@ export default {
 </script>
 
 <template>
-    <div class="flex flex-center convertion-block">
+    <div class="flex flex-center conversion-block">
         <div class="relative flex-column">
             <div class="flex unit-label" @click="() => this.$refs.dropdownFrom.toggle()">
                 <p class="flex-1">{{ this.from }}</p><i class="dropdown-arrow"></i>
@@ -66,11 +66,11 @@ export default {
         </div>
         <icon-input v-model="fromValue" name="fromValue" @input="validateInput" />
     </div>
-    <div class="convertion-block">
+    <div class="conversion-block">
         <img src="/swap.svg" title="Swap units" @click="swapUnits" />
         <img src="/reset.svg" title="Reset values" @click="resetValues" />
     </div>
-    <div class="flex flex-center convertion-block">
+    <div class="flex flex-center conversion-block">
         <div class="relative flex-column">
             <div class="flex unit-label" @click="() => this.$refs.dropdownTo.toggle()">
                 <p class="flex-1">{{ this.to }}</p><i class="dropdown-arrow"></i>

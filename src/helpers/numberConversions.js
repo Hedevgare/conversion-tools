@@ -1,5 +1,5 @@
 /**
- * Binary convertions
+ * Binary conversions
  */
 export function octalToBinary(octal) {
     return decimalToBinary(octalToDecimal(octal));
@@ -19,7 +19,7 @@ export function hexadecimalToBinary(hexadecimal) {
 }
 
 /**
- * Octal convertions
+ * Octal conversions
  */
 export function binaryToOctal(binary) {
     return decimalToOctal(binaryToDecimal(binary));
@@ -40,7 +40,7 @@ export function hexadecimalToOctal(hexadecimal) {
 }
 
 /**
- * Decimal convertions
+ * Decimal conversions
  */
 export function binaryToDecimal(binary) {
     return binary.split("")
@@ -63,7 +63,7 @@ export function hexadecimalToDecimal(hexadecimal) {
 }
 
 /**
- * Hexadecimal convertions
+ * Hexadecimal conversions
  */
 export function binaryToHexadecimal(binary) {
     return decimalToHexadecimal(binaryToDecimal(binary));

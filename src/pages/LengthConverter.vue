@@ -1,8 +1,15 @@
 <script>
-import ConvertionBlock from '../components/ConvertionBlock.vue';
+import ConversionBlock from '../components/ConversionBlock.vue';
 export default {
 	components: {
-		'convertion-block': ConvertionBlock
+		'conversion-block': ConversionBlock
+	},
+	data() {
+		return {
+			units: ['Meters', 'Centimeters', 'Kilometers', 'Feet'],
+			startFromUnit: 'Meters',
+			startToUnit: 'Feet'
+		}
 	}
 }
 </script>
@@ -10,6 +17,6 @@ export default {
 <template>
 	<section class="body">
 		<h1 class="title">Length Converter</h1>
-		<convertion-block startFrom="Meters" startTo="Feet" :units="['Meters', 'Feet']" />
+		<conversion-block :startFrom="startFromUnit" :startTo="startToUnit" :units="units" />
 	</section>
 </template>

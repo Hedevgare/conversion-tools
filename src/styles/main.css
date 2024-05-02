@@ -93,13 +93,13 @@ input:focus {
   flex-direction: column;
 }
 
-.convertion-block {
+.conversion-block {
   width: 430px;
   margin: auto;
   text-align: left;
 }
 
-.convertion-block>* {
+.conversion-block>* {
   flex: 1;
   font-size: 20px;
 }
