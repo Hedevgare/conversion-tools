@@ -6,7 +6,7 @@ export default {
 	},
 	data() {
 		return {
-			units: ['Meters', 'Centimeters', 'Kilometers', 'Feet'],
+			units: ['Meters', 'Millimeters', 'Centimeters', 'Kilometers', 'Feet'],
 			startFromUnit: 'Meters',
 			startToUnit: 'Feet'
 		}
