@@ -15,6 +15,7 @@ export function regexValidation(unit) {
             break;
         case "Centimeters":
         case "Feet":
+        case "Inches":
         case "Kilometers":
         case "Meters":
         case "Millimeters":

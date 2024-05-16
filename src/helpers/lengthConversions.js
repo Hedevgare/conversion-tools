@@ -5,6 +5,10 @@ export function feetToCentimeters(feet) {
     return metersToCentimeters(feetToMeters(feet));
 }
 
+export function inchesToCentimeters(inches) {
+    feetToCentimeters(inchesToFeet(inches));
+}
+
 export function kilometersToCentimeters(kilometers) {
     return metersToCentimeters(kilometersToMeters(kilometers));
 }
@@ -24,6 +28,14 @@ export function centimetersToFeet(centimeters) {
     return metersToFeet(centimetersToMeters(centimeters));
 }
 
+export function inchesToFeet(inches) {
+    return inches / 12;
+}
+
+export function kilometersToFeet(kilometers) {
+    return metersToFeet(kilometersToMeters(kilometers))
+}
+
 export function metersToFeet(meters) {
     return (meters * 3.2808).toFixed(4);
 }
@@ -32,10 +44,28 @@ export function millimetersToFeet(millimeters) {
     return metersToFeet(millimetersToMeters(millimeters));
 }
 
-export function kilometersToFeet(kilometers) {
-    return metersToFeet(kilometersToMeters(kilometers))
+/**
+ * Inches conversions
+ */
+export function centimetersToInches(centimeters) {
+    return feetToInches(centimetersToFeet(centimeters));
 }
 
+export function feetToInches(feet) {
+    return feet * 12;
+}
+
+export function kilometersToInches(kilometers) {
+    return feetToInches(kilometersToFeet(kilometers));
+}
+
+export function metersToInches(meters) {
+    return feetToInches(metersToFeet(meters));
+}
+
+export function millimetersToInches(millimeters) {
+    return feetToInches(millimetersToFeet(millimeters));
+}
 
 /**
  * Kilometers conversions
@@ -46,6 +76,10 @@ export function centimetersToKilometers(centimeters) {
 
 export function feetToKilometers(feet) {
     return metersToKilometers(feetToMeters(feet));
+}
+
+export function inchesToKilometers(inches) {
+    feetToKilometers(inchesToFeet(inches));
 }
 
 export function metersToKilometers(meters) {
@@ -67,6 +101,10 @@ export function feetToMeters(feet) {
     return (feet * 0.3048).toFixed(4);
 }
 
+export function inchesToMeters(inches) {
+    return feetToMeters(inchesToFeet(inches));
+}
+
 export function kilometersToMeters(kilometers) {
     return kilometers * 1000;
 }
@@ -84,6 +122,10 @@ export function centimetersToMillimeters(centimeters) {
 
 export function feetToMillimeters(feet) {
     return metersToMillimeters(feetToMeters(feet));
+}
+
+export function inchesToMillimeters(inches) {
+    return feetToMillimeters(inchesToFeet(inches));
 }
 
 export function kilometersToMillimeters(kilometers) {
