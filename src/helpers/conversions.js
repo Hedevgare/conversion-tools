@@ -1,5 +1,6 @@
 import * as numberConversions from "./numberConversions";
 import * as lengthConversions from "./lengthConversions";
+import * as temperatureConversions from "./temperatureConversions";
 
 export const conversions = {
     // Number Conversions
@@ -65,5 +66,18 @@ export const conversions = {
         "Inches": lengthConversions.millimetersToInches,
         "Kilometers": lengthConversions.millimetersToKilometers,
         "Meters": lengthConversions.millimetersToMeters
+    },
+    // Temperature Conversions
+    "Celsius": {
+        "Fahrenheit": temperatureConversions.celsiusToFahrenheit,
+        "Kelvin": temperatureConversions.celsiusToKelvin
+    },
+    "Fahrenheit": {
+        "Celsius": temperatureConversions.fahrenheitToCelsius,
+        "Kelvin": temperatureConversions.fahrenheitToKelvin
+    },
+    "Kelvin": {
+        "Celsius": temperatureConversions.kelvinToCelsius,
+        "Fahrenheit": temperatureConversions.kelvinToFahrenheit
     },
 }

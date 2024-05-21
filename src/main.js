@@ -6,10 +6,12 @@ import "./styles/main.css";
 
 import LengthConverter from "./pages/LengthConverter.vue";
 import NumberConverter from "./pages/NumberConverter.vue";
+import TemperatureConverter from "./pages/TemperatureConverter.vue";
 
 const routes = [
     { path: '/', component: NumberConverter },
-    { path: '/length', component: LengthConverter }
+    { path: '/length', component: LengthConverter },
+    { path: '/temperature', component: TemperatureConverter }
 ];
 
 const router = createRouter({

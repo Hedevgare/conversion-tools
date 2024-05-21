@@ -12,6 +12,7 @@ export default {
   <div class="header">
     <RouterLink class="header-link" to="/">Number Converter</RouterLink>
     <RouterLink class="header-link" to="/length">Length Converter</RouterLink>
+    <RouterLink class="header-link" to="/temperature">Temperature Converter</RouterLink>
   </div>
   <hr />
   <RouterView />

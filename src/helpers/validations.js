@@ -13,9 +13,12 @@ export function regexValidation(unit) {
         case "Hexadecimal":
             regex = new RegExp("^[0-9A-F]+$", "g");
             break;
+        case "Celsius":
         case "Centimeters":
+        case "Fahrenheit":
         case "Feet":
         case "Inches":
+        case "Kelvin":
         case "Kilometers":
         case "Meters":
         case "Millimeters":
