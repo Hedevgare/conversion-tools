@@ -1,3 +1,13 @@
+<script>
+export default {
+  computed: {
+    footer() {
+      return `Hedegare - 2024 ${import.meta.env.PROD ? '' : '(DEVELOPMENT)'}`
+    }
+  }
+}
+</script>
+
 <template>
   <div class="header">
     <RouterLink class="header-link" to="/">Number Converter</RouterLink>
@@ -6,6 +16,6 @@
   <hr />
   <RouterView />
   <div class="footer">
-    <p>Hedegare - 2024</p>
+    <p>{{ footer }}</p>
   </div>
 </template>
