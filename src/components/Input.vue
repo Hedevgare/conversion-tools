@@ -6,5 +6,5 @@ export default {
 </script>
 
 <template>
-    <input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :disabled="disabled" />
+    <input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :disabled="disabled" autocomplete="off" />
 </template>

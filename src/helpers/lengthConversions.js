@@ -37,7 +37,7 @@ export function kilometersToFeet(kilometers) {
 }
 
 export function metersToFeet(meters) {
-    return (meters * 3.2808).toFixed(4);
+    return meters / 0.3048;
 }
 
 export function millimetersToFeet(millimeters) {
@@ -98,7 +98,7 @@ export function centimetersToMeters(centimeters) {
 }
 
 export function feetToMeters(feet) {
-    return (feet * 0.3048).toFixed(4);
+    return feet * 0.3048;
 }
 
 export function inchesToMeters(inches) {
