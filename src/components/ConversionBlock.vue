@@ -9,7 +9,7 @@ export default {
         'dropdown': Dropdown,
         'icon-input': Input
     },
-    props: ["startFrom", "startTo", "units"],
+    props: ["startFrom", "startTo", "units", "shouldRound"],
     data() {
         return {
             from: this.$props.startFrom,
@@ -31,7 +31,12 @@ export default {
             }
         },
         startConversion() {
-            return conversions[this.from][this.to](this.fromValue);
+            let conversion = conversions[this.from][this.to](this.fromValue);
+            if (this.shouldRound) {
+                // Tests if the number converted has decimal part; if it has limits that part to 10 digits
+                conversion % 1 === 0 ? conversion : conversion = parseFloat(conversion.toFixed(10));
+            }
+            return conversion;
         },
         setUnit(type, unit) {
             type === "from" ? this.from = unit : this.to = unit;

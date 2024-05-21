@@ -17,6 +17,6 @@ export default {
 <template>
 	<section class="body">
 		<h1 class="title">Length Converter</h1>
-		<conversion-block :startFrom="startFromUnit" :startTo="startToUnit" :units="units" />
+		<conversion-block :startFrom="startFromUnit" :startTo="startToUnit" :units="units" :shouldRound="true" />
 	</section>
 </template>
