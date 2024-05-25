@@ -7,11 +7,13 @@ import "./styles/main.css";
 import LengthConverter from "./pages/LengthConverter.vue";
 import NumberConverter from "./pages/NumberConverter.vue";
 import TemperatureConverter from "./pages/TemperatureConverter.vue";
+import CurrencyConverter from "./pages/CurrencyConverter.vue";
 
 const routes = [
     { path: '/', component: NumberConverter },
     { path: '/length', component: LengthConverter },
-    { path: '/temperature', component: TemperatureConverter }
+    { path: '/temperature', component: TemperatureConverter },
+    { path: '/currency', component: CurrencyConverter }
 ];
 
 const router = createRouter({
