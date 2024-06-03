@@ -30,7 +30,7 @@ input {
   height: 30px;
   text-align: center;
   border-color: gray;
-  margin-left: 30px;
+  margin-left: 0;
 }
 
 input:disabled {
@@ -74,9 +74,9 @@ input:focus {
   align-items: center;
   text-align: center;
   padding: 30px;
-  border: 1px solid #ffffff;
+  border: 1px solid #a0d2db;
   border-radius: 20px;
-  margin: 15px 30px;
+  margin: 15px;
   height: 50px;
   width: 50px;
 }
@@ -119,14 +119,19 @@ input:focus {
 }
 
 .conversion-block {
-  width: 430px;
+  /* width: 430px; */
+  flex-direction: column;
   margin: auto;
-  text-align: left;
+  text-align: inherit;
 }
 
 .conversion-block>* {
   flex: 1;
   font-size: 20px;
+}
+
+.conversion-icons {
+  margin-top: 20px;
 }
 
 .underline-text {
@@ -144,6 +149,7 @@ input:focus {
   border-bottom-left-radius: 5px;
   position: absolute;
   width: 100%;
+  min-width: fit-content;
   font-size: 16px;
   z-index: 1;
 }
@@ -176,4 +182,33 @@ input:focus {
 
 .title {
   color: #a0d2db;
+}
+
+/* Margins & Paddings */
+.margin-auto {
+  margin: auto;
+}
+
+.margin-right-5 {
+  margin-right: 5px;
+}
+
+.margin-left-5 {
+  margin-left: 5px;
+}
+
+/* Media Queries */
+@media screen and (min-width: 500px) {
+  input {
+    margin-left: 30px;
+  }
+  
+  .conversion-block {
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .conversion-icons {
+    margin-top: 5px;
+  }
 }

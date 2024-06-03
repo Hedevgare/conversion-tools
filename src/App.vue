@@ -2,7 +2,7 @@
 export default {
 	data() {
 		return {
-			isMenuOpen: true,
+			isMenuOpen: false,
 		}
 	},
 	computed: {
@@ -28,23 +28,25 @@ export default {
 	</div>
 	<hr />
 	<section class="menu" :class="{ 'open': isMenuOpen }">
-		<div class="menu-item">
-			<RouterLink class="header-link" to="/" @click="toggleMenu">
-				<font-awesome-icon :icon="['fa', 'hashtag']" />
-				Numbers
-			</RouterLink>
-		</div>
-		<div class="menu-item">
-			<RouterLink class="header-link" to="/length" @click="toggleMenu">
-				<font-awesome-icon :icon="['fa', 'ruler']" />
-				Lengths
-			</RouterLink>
-		</div>
-		<div class="menu-item">
-			<RouterLink class="header-link" to="/temperature" @click="toggleMenu">
-				<font-awesome-icon :icon="['fa', 'temperature-half']" />
-				Temperatures
-			</RouterLink>
+		<div class="menu-container">
+			<div class="menu-item">
+				<RouterLink class="header-link" to="/" @click="toggleMenu">
+					<font-awesome-icon :icon="['fa', 'hashtag']" />
+					Numbers
+				</RouterLink>
+			</div>
+			<div class="menu-item">
+				<RouterLink class="header-link" to="/length" @click="toggleMenu">
+					<font-awesome-icon :icon="['fa', 'ruler']" />
+					Lengths
+				</RouterLink>
+			</div>
+			<div class="menu-item">
+				<RouterLink class="header-link" to="/temperature" @click="toggleMenu">
+					<font-awesome-icon :icon="['fa', 'temperature-half']" />
+					Temperatures
+				</RouterLink>
+			</div>
 		</div>
 	</section>
 	<RouterView />
@@ -93,6 +95,13 @@ export default {
 }
 
 .menu.open {
+	display: block;
+	/* flex-wrap: wrap; */
+}
+
+.menu-container {
 	display: flex;
+	flex-wrap: wrap;
+	margin: 15px;
 }
 </style>

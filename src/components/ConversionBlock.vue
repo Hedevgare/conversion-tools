@@ -61,28 +61,32 @@ export default {
 </script>
 
 <template>
-    <div class="flex flex-center conversion-block">
-        <div class="relative flex-column">
-            <div class="flex unit-label" @click="() => this.$refs.dropdownFrom.toggle()">
-                <p class="flex-1">{{ this.from }}</p><i class="dropdown-arrow"></i>
+    <div class="">
+        <div class="flex flex-center conversion-block">
+            <div class="relative">
+                <div class="flex unit-label" @click="() => this.$refs.dropdownFrom.toggle()">
+                    <p class="flex-1">{{ this.from }}</p>
+                    <i class="dropdown-arrow margin-left-5"></i>
+                </div>
+                <dropdown ref="dropdownFrom" :active="this.from" :units="this.units"
+                    @set-unit="(unit) => setUnit('from', unit)" />
             </div>
-            <dropdown ref="dropdownFrom" :active="this.from" :units="this.units"
-                @set-unit="(unit) => setUnit('from', unit)" />
+            <icon-input v-model="fromValue" name="fromValue" @input="validateInput" />
         </div>
-        <icon-input v-model="fromValue" name="fromValue" @input="validateInput" />
-    </div>
-    <div class="conversion-block">
-        <img src="/swap.svg" title="Swap units" @click="swapUnits" />
-        <img src="/reset.svg" title="Reset values" @click="resetValues" />
-    </div>
-    <div class="flex flex-center conversion-block">
-        <div class="relative flex-column">
-            <div class="flex unit-label" @click="() => this.$refs.dropdownTo.toggle()">
-                <p class="flex-1">{{ this.to }}</p><i class="dropdown-arrow"></i>
+        <div class="conversion-block conversion-icons">
+            <img src="/swap.svg" title="Swap units" @click="swapUnits" />
+            <img src="/reset.svg" title="Reset values" @click="resetValues" />
+        </div>
+        <div class="flex flex-center conversion-block">
+            <div class="relative">
+                <div class="flex unit-label" @click="() => this.$refs.dropdownTo.toggle()">
+                    <p class="flex-1">{{ this.to }}</p>
+                    <i class="dropdown-arrow margin-left-5"></i>
+                </div>
+                <dropdown ref="dropdownTo" :active="this.to" :units="this.units"
+                    @set-unit="(unit) => setUnit('to', unit)" />
             </div>
-            <dropdown ref="dropdownTo" :active="this.to" :units="this.units"
-                @set-unit="(unit) => setUnit('to', unit)" />
+            <icon-input v-model="toValue" :disabled="true" />
         </div>
-        <icon-input v-model="toValue" :disabled="true" />
     </div>
 </template>
