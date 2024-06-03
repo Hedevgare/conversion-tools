@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
+/* Base Elements */
 * {
   font-family: 'Source Code Pro', monospace;
 }
@@ -41,6 +42,8 @@ input:focus {
   outline-color: #2e2e3a;
 }
 
+/* IDs */
+
 #app {
   display: flex;
   flex-direction: column;
@@ -51,6 +54,8 @@ input:focus {
   padding: 0;
 }
 
+/* Classes */
+/* Header and Menu */
 .header {
   display: flex;
   flex-direction: row;
@@ -60,11 +65,31 @@ input:focus {
   margin: 15px 30px;
   text-decoration: none;
   color: #a0d2db;
+  font-size: 14px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  margin: 15px 30px;
+  height: 50px;
+  width: 50px;
 }
 
 .header-link:hover {
   cursor: pointer;
-} 
+}
+
+.menu-item svg {
+  font-size: 40px;
+}
+
+/*  */
 
 .body {
   text-align: center;
