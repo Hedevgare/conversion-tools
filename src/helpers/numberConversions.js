@@ -6,12 +6,14 @@ export function octalToBinary(octal) {
 }
 
 export function decimalToBinary(decimal) {
+    let signal = decimal < 0 ? "-" : "";
     let binary = "";
+    decimal = Math.abs(decimal);
     while (decimal > 0) {
         binary = decimal % 2 + binary;
         decimal = Math.floor(decimal / 2);
     }
-    return binary;
+    return signal + binary;
 }
 
 export function hexadecimalToBinary(hexadecimal) {
@@ -26,13 +28,15 @@ export function binaryToOctal(binary) {
 }
 
 export function decimalToOctal(decimal) {
-    if(decimal < 8) return decimal;
+    let signal = decimal < 0 ? "-" : "";
+    decimal = Math.abs(decimal);
+    if (0 <= decimal && decimal < 8) return signal + decimal;
     let octal = "";
-    while(decimal >= 8) {
+    while (decimal >= 8) {
         octal = decimal % 8 + octal;
         decimal = Math.floor(decimal / 8);
     }
-    return decimal + octal;
+    return signal + decimal + octal;
 }
 
 export function hexadecimalToOctal(hexadecimal) {
@@ -43,21 +47,27 @@ export function hexadecimalToOctal(hexadecimal) {
  * Decimal conversions
  */
 export function binaryToDecimal(binary) {
-    return binary.split("")
+    let signal = binary < 0 ? "-" : "";
+    binary = Math.abs(binary);
+    return signal + binary.toString().split("")
         .map((n) => parseInt(n))
         .reverse()
         .reduce((total, current, index) => total + current * Math.pow(2, index), 0);
 }
 
 export function octalToDecimal(octal) {
-    return octal.split("")
+    let signal = octal < 0 ? "-" : "";
+    octal = Math.abs(octal);
+    return signal + octal.toString().split("")
         .map((n) => parseInt(n))
         .reverse()
         .reduce((total, current, index) => total + current * Math.pow(8, index), 0);
 }
 
 export function hexadecimalToDecimal(hexadecimal) {
-    return hexadecimal.split("")
+    let signal = hexadecimal < 0 ? "-" : "";
+    hexadecimal = Math.abs(hexadecimal);
+    return signal + hexadecimal.toString().split("")
         .reverse()
         .reduce((total, current, index) => total + parseInt(mapHexadecimalCharacter(current)) * Math.pow(16, index), 0);
 }
@@ -74,17 +84,19 @@ export function octalToHexadecimal(octal) {
 }
 
 export function decimalToHexadecimal(decimal) {
+    let signal = decimal < 0 ? "-" : "";
+    decimal = Math.abs(decimal);
     let hexadecimal = "";
     while (decimal > 0) {
         hexadecimal = mapHexadecimalCharacter(decimal % 16) + hexadecimal;
         decimal = Math.floor(decimal / 16);
     }
-    return hexadecimal;
+    return signal + hexadecimal;
 }
 
 function mapHexadecimalCharacter(number) {
     let character;
-    switch(number) {
+    switch (number) {
         case 10:
             character = "A";
             break;
