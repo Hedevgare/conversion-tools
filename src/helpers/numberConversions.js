@@ -6,7 +6,7 @@ export function octalToBinary(octal) {
 }
 
 export function decimalToBinary(decimal) {
-    if(decimal === 0) return "0";
+    if(decimal === "0") return "0";
     let signal = decimal < 0 ? "-" : "";
     let binary = "";
     decimal = Math.abs(decimal);
@@ -57,7 +57,7 @@ export function binaryToDecimal(binary) {
 }
 
 export function octalToDecimal(octal) {
-    if(octal === 0) return 0;
+    if(octal === "0") return "0";
     let signal = octal < 0 ? "-" : "";
     octal = Math.abs(octal);
     return signal + octal.toString().split("")
@@ -67,7 +67,7 @@ export function octalToDecimal(octal) {
 }
 
 export function hexadecimalToDecimal(hexadecimal) {
-    if(hexadecimal === 0) return 0;
+    if(hexadecimal === "0") return "0";
     let signal = hexadecimal[0] === "-" ? "-" : "";
     hexadecimal = hexadecimal[0] === "-" ? hexadecimal.substring(1) : hexadecimal;
     return signal + hexadecimal.toString().split("")
