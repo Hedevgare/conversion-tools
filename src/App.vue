@@ -2,12 +2,13 @@
 export default {
 	data() {
 		return {
+			appVersion: 'v0.1.0',
 			isMenuOpen: false,
 		}
 	},
 	computed: {
 		footer() {
-			return `Hedegare - 2024 ${import.meta.env.PROD ? '' : '(DEVELOPMENT)'}`
+			return `Hedegare 2024 - ${this.appVersion}${import.meta.env.PROD ? '' : '(DEVELOPMENT)'}`
 		}
 	},
 	methods: {
