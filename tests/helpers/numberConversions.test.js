@@ -71,3 +71,103 @@ test('hexadecimalToOctal: -FA => -372', () => {
 test('hexadecimalToOctal: 0 => 0', () => {
     expect(hexadecimalToOctal('0')).toBe('0');
 });
+
+/**
+ * Test decimal conversions
+ */
+
+import { binaryToDecimal, octalToDecimal, hexadecimalToDecimal } from '../../src/helpers/numberConversions'
+// Binary to decimal
+test('binaryToDecimal: 11100 => 28', () => {
+    expect(binaryToDecimal('11100')).toBe('28');
+});
+test('binaryToDecimal: -10001 => -17', () => {
+    expect(binaryToDecimal('-10001')).toBe('-17');
+});
+test('binaryToDecimal: 0 => 0', () => {
+    expect(binaryToDecimal('0')).toBe('0');
+});
+// Octal to decimal
+test('octalToDecimal: 34 => 28', () => {
+    expect(octalToDecimal('34')).toBe('28');
+});
+test('octalToDecimal: -21 => -17', () => {
+    expect(octalToDecimal('-21')).toBe('-17');
+});
+test('octalToDecimal: 0 => 0', () => {
+    expect(octalToDecimal('0')).toBe('0');
+});
+// Hexadecimal to decimal
+test('hexadecimalToDecimal: 1A => 26', () => {
+    expect(hexadecimalToDecimal('1A')).toBe('26');
+});
+test('hexadecimalToDecimal: -FA => -250', () => {
+    expect(hexadecimalToDecimal('-FA')).toBe('-250');
+});
+test('hexadecimalToDecimal: 0 => 0', () => {
+    expect(hexadecimalToDecimal('0')).toBe('0');
+});
+
+/**
+ * Test hexadecimal conversions
+ */
+import { decimalToHexadecimal, binaryToHexadecimal, octalToHexadecimal } from '../../src/helpers/numberConversions'
+
+// Binary to hexadecimal
+test('binaryToHexadecimal: 11100 => 1C', () => {
+    expect(binaryToHexadecimal('11100')).toBe('1C');
+});
+test('binaryToHexadecimal: -10001 => -11', () => {
+    expect(binaryToHexadecimal('-10001')).toBe('-11');
+});
+test('binaryToHexadecimal: 0 => 0', () => {
+    expect(binaryToHexadecimal('0')).toBe('0');
+});
+// Octal to hexadecimal
+test('octalToHexadecimal: 34 => 1C', () => {
+    expect(octalToHexadecimal('34')).toBe('1C');
+});
+test('octalToHexadecimal: -21 => -11', () => {
+    expect(octalToHexadecimal('-21')).toBe('-11');
+});
+test('octalToHexadecimal: 0 => 0', () => {
+    expect(octalToHexadecimal('0')).toBe('0');
+});
+// Decimal to hexadecimal
+test('decimalToHexadecimal: 73 => 49', () => {
+    expect(decimalToHexadecimal('73')).toBe('49');
+});
+test('decimalToHexadecimal: -31 => -1F', () => {
+    expect(decimalToHexadecimal('-31')).toBe('-1F');
+});
+test('decimalToHexadecimal: 0 => 0', () => {
+    expect(decimalToHexadecimal('0')).toBe('0');
+});
+
+/**
+ * Test invalid conversions
+ */
+// test('octalToBinary: 8 => Error', () => {
+//     expect(octalToBinary('8')).toBe('Error');
+// });
+// test('decimalToOctal: 8 => Error', () => {
+//     expect(decimalToOctal('8')).toBe('Error');
+// });
+// test('hexadecimalToDecimal: 1G => Error', () => {
+//     expect(hexadecimalToDecimal('1G')).toBe('Error');
+// });
+// test('binaryToDecimal: 2.5 => Error', () => {
+//     expect(binaryToDecimal('2.5')).toBe('Error');
+// });
+// test('octalToDecimal: 2.5 => Error', () => {
+//     expect(octalToDecimal('2.5')).toBe('Error');
+// });
+// test('hexadecimalToBinary: 2.5 => Error', () => {
+//     expect(hexadecimalToBinary('2.5')).toBe('Error');
+// });
+// test('binaryToOctal: 2.5 => Error', () => {
+//     expect(binaryToOctal('2.5')).toBe('Error');
+// });
+// test('decimalToBinary: 2.5 => Error', () => {
+//     expect(decimalToBinary('2.5')).toBe('Error');
+// });

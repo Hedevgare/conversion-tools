@@ -87,6 +87,7 @@ export function octalToHexadecimal(octal) {
 }
 
 export function decimalToHexadecimal(decimal) {
+    if(decimal === "0") return "0";
     let signal = decimal < 0 ? "-" : "";
     decimal = Math.abs(decimal);
     let hexadecimal = "";
