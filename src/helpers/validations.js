@@ -1,3 +1,5 @@
+import { conversions } from "./conversions";
+
 export function regexValidation(unit) {
     let regex;
     switch (unit) {
@@ -29,4 +31,12 @@ export function regexValidation(unit) {
             break;
     }
     return regex;
+}
+
+export function validateUnit(fromUnit, toUnit, value) {
+    if(regexValidation(fromUnit).test(value)) {
+        return conversions[fromUnit][toUnit](value);
+    } else {
+        return "Invalid input!";
+    }
 }

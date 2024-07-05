@@ -2,7 +2,7 @@
 import Dropdown from '../components/Dropdown.vue';
 import Input from './Input.vue';
 import { conversions } from "../helpers/conversions";
-import { regexValidation } from "../helpers/validations";
+import { regexValidation, validateUnit } from "../helpers/validations";
 
 export default {
     components: {
@@ -20,18 +20,14 @@ export default {
     },
     methods: {
         validateInput() {
-            const regex = regexValidation(this.from);
-
             if (!this.fromValue) {
                 this.toValue = "";
-            } else if (regex.test(this.fromValue)) {
-                this.from !== this.to ? this.toValue = this.startConversion() : this.toValue = this.fromValue;
             } else {
-                this.toValue = "Invalid input!";
+                this.from !== this.to ? this.toValue = this.startConversion() : this.toValue = this.fromValue;
             }
         },
         startConversion() {
-            let conversion = conversions[this.from][this.to](this.fromValue);
+            let conversion = validateUnit(this.from, this.to, this.fromValue);
             if (this.shouldRound) {
                 // Tests if the number converted has decimal part; if it has limits that part to 10 digits
                 conversion % 1 === 0 ? conversion : conversion = parseFloat(conversion.toFixed(10));

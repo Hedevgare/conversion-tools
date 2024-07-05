@@ -112,6 +112,7 @@ test('hexadecimalToDecimal: 0 => 0', () => {
  * Test hexadecimal conversions
  */
 import { decimalToHexadecimal, binaryToHexadecimal, octalToHexadecimal } from '../../src/helpers/numberConversions'
+import { validateUnit } from '../../src/helpers/validations';
 
 // Binary to hexadecimal
 test('binaryToHexadecimal: 11100 => 1C', () => {
@@ -147,27 +148,15 @@ test('decimalToHexadecimal: 0 => 0', () => {
 /**
  * Test invalid conversions
  */
-// test('octalToBinary: 8 => Error', () => {
-//     expect(octalToBinary('8')).toBe('Error');
-// });
-// test('decimalToOctal: 8 => Error', () => {
-//     expect(decimalToOctal('8')).toBe('Error');
-// });
-// test('hexadecimalToDecimal: 1G => Error', () => {
-//     expect(hexadecimalToDecimal('1G')).toBe('Error');
-// });
-// test('binaryToDecimal: 2.5 => Error', () => {
-//     expect(binaryToDecimal('2.5')).toBe('Error');
-// });
-// test('octalToDecimal: 2.5 => Error', () => {
-//     expect(octalToDecimal('2.5')).toBe('Error');
-// });
-// test('hexadecimalToBinary: 2.5 => Error', () => {
-//     expect(hexadecimalToBinary('2.5')).toBe('Error');
-// });
-// test('binaryToOctal: 2.5 => Error', () => {
-//     expect(binaryToOctal('2.5')).toBe('Error');
-// });
-// test('decimalToBinary: 2.5 => Error', () => {
-//     expect(decimalToBinary('2.5')).toBe('Error');
-// });
+test('binaryToDecimal: 2 => Invalid input!', () => {
+    expect(validateUnit('Binary','Decimal','2')).toBe('Invalid input!');
+});
+test('octalToDecimal: 8 => Invalid input!', () => {
+    expect(validateUnit('Octal', 'Decimal', '8')).toBe('Invalid input!');
+});
+test('decimalToBinary: 2.5 => Invalid input!', () => {
+    expect(validateUnit('Decimal','Binary','2.5')).toBe('Invalid input!');
+});
+test('hexadecimalToDecimal: 1G => Invalid input!', () => {
+    expect(validateUnit('Hexadecimal', 'Decimal', '1G')).toBe('Invalid input!');
+});
