@@ -5,10 +5,15 @@ export default {
         'conversion-block': ConversionBlock
     },
     data() {
+        const units = [
+            { unit: 'Litres', symbol: 'L' },
+            { unit: 'Gallons', symbol: 'gal' },
+            // { unit: 'Cups', symbol: 'cup' }
+        ];
         return {
-            units: ['Litres', 'Gallons', 'Cups'],
-            startFromUnit: 'Litres',
-            startToUnit: 'Gallons'
+            units: units,
+            startFromUnit: units[0],
+            startToUnit: units[1]
         }
     }
 }

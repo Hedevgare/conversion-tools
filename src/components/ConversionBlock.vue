@@ -27,7 +27,7 @@ export default {
             }
         },
         startConversion() {
-            let conversion = validateUnit(this.from, this.to, this.fromValue);
+            let conversion = validateUnit(this.from.unit, this.to.unit, this.fromValue);
             if (this.shouldRound) {
                 // Tests if the number converted has decimal part; if it has limits that part to 10 digits
                 conversion % 1 === 0 ? conversion : conversion = parseFloat(conversion.toFixed(10));
@@ -37,7 +37,8 @@ export default {
         setUnit(type, unit) {
             type === "from" ? this.from = unit : this.to = unit;
             if (this.from !== this.to) {
-                this.toValue = this.startConversion(this.fromValue);
+                // this.toValue = this.startConversion(this.fromValue);
+                this.validateInput();
             }
         },
         swapUnits() {
@@ -61,13 +62,13 @@ export default {
         <div class="flex flex-center conversion-block">
             <div class="relative">
                 <div class="flex unit-label" @click="() => this.$refs.dropdownFrom.toggle()">
-                    <p class="flex-1">{{ this.from }}</p>
+                    <p class="flex-1">{{ this.from.unit }}</p>
                     <i class="dropdown-arrow margin-left-5"></i>
                 </div>
                 <dropdown ref="dropdownFrom" :active="this.from" :units="this.units"
                     @set-unit="(unit) => setUnit('from', unit)" />
             </div>
-            <icon-input v-model="fromValue" name="fromValue" @input="validateInput" />
+            <icon-input v-model="fromValue" name="fromValue" @input="validateInput" :shorter="this.from.symbol" />
         </div>
         <div class="conversion-block conversion-icons">
             <img src="/swap.svg" title="Swap units" @click="swapUnits" />
@@ -76,13 +77,13 @@ export default {
         <div class="flex flex-center conversion-block">
             <div class="relative">
                 <div class="flex unit-label" @click="() => this.$refs.dropdownTo.toggle()">
-                    <p class="flex-1">{{ this.to }}</p>
+                    <p class="flex-1">{{ this.to.unit }}</p>
                     <i class="dropdown-arrow margin-left-5"></i>
                 </div>
                 <dropdown ref="dropdownTo" :active="this.to" :units="this.units"
                     @set-unit="(unit) => setUnit('to', unit)" />
             </div>
-            <icon-input v-model="toValue" :disabled="true" />
+            <icon-input v-model="toValue" :disabled="true" :shorter="this.to.symbol" />
         </div>
     </div>
 </template>

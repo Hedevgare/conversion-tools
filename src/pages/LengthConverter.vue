@@ -5,10 +5,18 @@ export default {
 		'conversion-block': ConversionBlock
 	},
 	data() {
+		const units = [
+			{ unit: 'Meters', symbol: 'm' },
+			{ unit: 'Millimeters', symbol: 'mm' },
+			{ unit: 'Centimeters', symbol: 'cm' },
+			{ unit: 'Kilometers', symbol: 'km' },
+			{ unit: 'Feet', symbol: 'ft' },
+			{ unit: 'Inches', symbol: 'in' }
+		];
 		return {
-			units: ['Meters', 'Millimeters', 'Centimeters', 'Kilometers', 'Feet', 'Inches'],
-			startFromUnit: 'Meters',
-			startToUnit: 'Feet'
+			units: units,
+			startFromUnit: units[0],
+			startToUnit: units[4]
 		}
 	}
 }

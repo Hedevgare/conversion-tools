@@ -20,6 +20,6 @@ export default {
 
 <template>
     <div v-if="show" class="dropdown">
-        <p v-for="unit in $props.units" :class="{'active-dropdown' : $props.active == unit}" @click="changeUnit(unit)">{{ unit }}</p>
+        <p v-for="unit in $props.units" :class="{'active-dropdown' : $props.active == unit.unit}" @click="changeUnit(unit)">{{ unit.unit }}</p>
     </div>
 </template>

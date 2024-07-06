@@ -5,10 +5,15 @@ export default {
         'conversion-block': ConversionBlock
     },
     data() {
+        const units = [
+            { unit: 'Celsius', symbol: 'C' },
+            { unit: 'Fahrenheit', symbol: 'F' },
+            { unit: 'Kelvin', symbol: 'K' }
+        ];
         return {
-            units: ['Celsius', 'Fahrenheit', 'Kelvin'],
-            startFromUnit: 'Celsius',
-            startToUnit: 'Fahrenheit'
+            units: units,
+            startFromUnit: units[0],
+            startToUnit: units[1]
         }
     }
 }

@@ -5,10 +5,16 @@ export default {
 		'conversion-block': ConversionBlock
 	},
 	data() {
+		const units = [
+			{ unit: 'Binary', symbol: '0b' },
+			{ unit: 'Octal', symbol: '0o' },
+			{ unit: 'Decimal', symbol: '0d' },
+			{ unit: 'Hexadecimal', symbol: '0x' }
+		];
 		return {
-			units: ['Binary', 'Octal', 'Decimal', 'Hexadecimal'],
-			startFromUnit: 'Binary',
-			startToUnit: 'Decimal'
+			units: units,
+			startFromUnit: units[0],
+			startToUnit: units[2]
 		}
 	}
 }
