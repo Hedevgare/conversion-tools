@@ -1,6 +1,7 @@
 import * as numberConversions from "./numberConversions";
 import * as lengthConversions from "./lengthConversions";
 import * as temperatureConversions from "./temperatureConversions";
+import * as volumeConversions from "./volumeConversions";
 
 export const conversions = {
     // Number Conversions
@@ -80,4 +81,11 @@ export const conversions = {
         "Celsius": temperatureConversions.kelvinToCelsius,
         "Fahrenheit": temperatureConversions.kelvinToFahrenheit
     },
+    // Volume Conversions
+    "Litres": {
+        "Gallons": volumeConversions.litresToGallons,
+    },
+    "Gallons": {
+        "Litres": volumeConversions.gallonsToLitres,
+    }
 }

@@ -22,6 +22,8 @@ export function regexValidation(unit) {
         case "Kilometers":
         case "Meters":
         case "Millimeters":
+        case "Litres":
+        case "Gallons":
             regex = new RegExp("^[0-9.0-9]+$", "g");
             break;
         case "Celsius":
