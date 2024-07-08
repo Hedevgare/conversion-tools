@@ -28,10 +28,10 @@ export default {
         },
         startConversion() {
             let conversion = validateUnit(this.from.unit, this.to.unit, this.fromValue);
-            if (this.shouldRound) {
-                // Tests if the number converted has decimal part; if it has limits that part to 10 digits
-                conversion % 1 === 0 ? conversion : conversion = parseFloat(conversion.toFixed(10));
-            }
+            // if (this.shouldRound) {
+            //     // Tests if the number converted has decimal part; if it has limits that part to 10 digits
+            //     conversion % 1 === 0 ? conversion : conversion = parseFloat(conversion.toFixed(10));
+            // }
             return conversion;
         },
         setUnit(type, unit) {

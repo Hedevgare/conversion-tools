@@ -14,7 +14,7 @@ export function kilometersToCentimeters(kilometers) {
 }
 
 export function metersToCentimeters(meters) {
-    return meters * 100;
+    return Number((meters * 100).toFixed(10));
 }
 
 export function millimetersToCentimeters(millimeters) {
@@ -29,7 +29,7 @@ export function centimetersToFeet(centimeters) {
 }
 
 export function inchesToFeet(inches) {
-    return inches / 12;
+    return Number((inches / 12).toFixed(10));
 }
 
 export function kilometersToFeet(kilometers) {
@@ -37,7 +37,7 @@ export function kilometersToFeet(kilometers) {
 }
 
 export function metersToFeet(meters) {
-    return meters / 0.3048;
+    return Number((meters / 0.3048).toFixed(10));
 }
 
 export function millimetersToFeet(millimeters) {
@@ -52,7 +52,7 @@ export function centimetersToInches(centimeters) {
 }
 
 export function feetToInches(feet) {
-    return feet * 12;
+    return Number((feet * 12).toFixed(10));
 }
 
 export function kilometersToInches(kilometers) {
@@ -83,7 +83,7 @@ export function inchesToKilometers(inches) {
 }
 
 export function metersToKilometers(meters) {
-    return meters / 1000;
+    return Number((meters / 1000).toFixed(10));
 }
 
 export function millimetersToKilometers(millimeters) {
@@ -94,11 +94,11 @@ export function millimetersToKilometers(millimeters) {
  * Meters conversions
  */
 export function centimetersToMeters(centimeters) {
-    return centimeters / 100;
+    return Number((centimeters / 100).toFixed(10));
 }
 
 export function feetToMeters(feet) {
-    return feet * 0.3048;
+    return Number((feet * 0.3048).toFixed(10));
 }
 
 export function inchesToMeters(inches) {
@@ -106,11 +106,11 @@ export function inchesToMeters(inches) {
 }
 
 export function kilometersToMeters(kilometers) {
-    return kilometers * 1000;
+    return Number((kilometers * 1000).toFixed(10));
 }
 
 export function millimetersToMeters(millimeters) {
-    return millimeters / 1000;
+    return Number((millimeters / 1000).toFixed(10));
 }
 
 /**
@@ -133,5 +133,5 @@ export function kilometersToMillimeters(kilometers) {
 }
 
 export function metersToMillimeters(meters) {
-    return meters * 1000;
+    return Number((meters * 1000).toFixed(10));
 }
