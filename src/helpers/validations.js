@@ -1,6 +1,4 @@
-import { conversions } from "./conversions";
-
-export function regexValidation(unit) {
+function regexValidation(unit) {
     let regex;
     switch (unit) {
         case "Binary":
@@ -35,10 +33,6 @@ export function regexValidation(unit) {
     return regex;
 }
 
-export function validateUnit(fromUnit, toUnit, value) {
-    if(regexValidation(fromUnit).test(value)) {
-        return conversions[fromUnit][toUnit](value);
-    } else {
-        return "Invalid input!";
-    }
+export function validateUnit(fromUnit, value) {
+    return regexValidation(fromUnit).test(value);
 }

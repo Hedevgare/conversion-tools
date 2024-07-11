@@ -1,8 +1,7 @@
 <script>
 import Dropdown from '../components/Dropdown.vue';
 import Input from './Input.vue';
-import { conversions } from "../helpers/conversions";
-import { regexValidation, validateUnit } from "../helpers/validations";
+import { startConvertion } from "../helpers/conversions";
 
 export default {
     components: {
@@ -27,17 +26,11 @@ export default {
             }
         },
         startConversion() {
-            let conversion = validateUnit(this.from.unit, this.to.unit, this.fromValue);
-            // if (this.shouldRound) {
-            //     // Tests if the number converted has decimal part; if it has limits that part to 10 digits
-            //     conversion % 1 === 0 ? conversion : conversion = parseFloat(conversion.toFixed(10));
-            // }
-            return conversion;
+            return startConvertion(this.from.unit, this.to.unit, this.fromValue, this.shouldRound? this.shouldRound : false);
         },
         setUnit(type, unit) {
             type === "from" ? this.from = unit : this.to = unit;
             if (this.from !== this.to) {
-                // this.toValue = this.startConversion(this.fromValue);
                 this.validateInput();
             }
         },

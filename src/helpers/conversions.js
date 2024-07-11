@@ -2,6 +2,7 @@ import * as numberConversions from "./numberConversions";
 import * as lengthConversions from "./lengthConversions";
 import * as temperatureConversions from "./temperatureConversions";
 import * as volumeConversions from "./volumeConversions";
+import { validateUnit } from "./validations";
 
 export const conversions = {
     // Number Conversions
@@ -87,5 +88,18 @@ export const conversions = {
     },
     "Gallons": {
         "Litres": volumeConversions.gallonsToLitres,
+    }
+}
+
+export function startConvertion(fromUnit, toUnit, value, shouldRound = false) {
+    if (validateUnit(fromUnit, value)) {
+        let conversion = conversions[fromUnit][toUnit](value);
+        if (shouldRound) {
+            return Number(conversion.toFixed(10));
+        } else {
+            return conversion;
+        }
+    } else {
+        return "Invalid input!";
     }
 }
