@@ -21,12 +21,12 @@ function regexValidation(unit) {
         case "Millimeters":
         case "Litres":
         case "Gallons":
+        case "Kelvin":
+        case "Rankine":
             regex = new RegExp("^[0-9.0-9]+$", "g");
             break;
         case "Celsius":
         case "Fahrenheit":
-        case "Kelvin":
-        case "Rankine":
             regex = new RegExp("^[\-]?[0-9]*[\.]?[0-9]+$", "g");
             break;
     }

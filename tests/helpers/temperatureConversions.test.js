@@ -12,12 +12,12 @@ test('Fahrenheit to Celsius', () => {
 test('Kelvin to Celsius', () => {
     expect(startConvertion('Kelvin', 'Celsius', 273.15, true)).toBe(0);
     expect(startConvertion('Kelvin', 'Celsius', 0, true)).toBe(-273.15);
-    expect(startConvertion('Kelvin', 'Celsius', -125, true)).toBe(-398.15);
+    expect(startConvertion('Kelvin', 'Celsius', -125, true)).toBe('Invalid input!');
 });
 test('Rankine to Celsius', () => {
     expect(startConvertion('Rankine', 'Celsius', 491.67, true)).toBe(0);
     expect(startConvertion('Rankine', 'Celsius', 0, true)).toBe(-273.15);
-    expect(startConvertion('Rankine', 'Celsius', -125, true)).toBe(-342.5944444444);
+    expect(startConvertion('Rankine', 'Celsius', -125, true)).toBe('Invalid input!');
 });
 
 /**
@@ -31,12 +31,12 @@ test('Celsius to Fahrenheit', () => {
 test('Kelvin to Fahrenheit', () => {
     expect(startConvertion('Kelvin', 'Fahrenheit', 273.15, true)).toBe(32);
     expect(startConvertion('Kelvin', 'Fahrenheit', 0, true)).toBe(-459.67);
-    expect(startConvertion('Kelvin', 'Fahrenheit', -125, true)).toBe(-684.67);
+    expect(startConvertion('Kelvin', 'Fahrenheit', -125, true)).toBe('Invalid input!');
 });
 test('Rankine to Fahrenheit', () => {
     expect(startConvertion('Rankine', 'Fahrenheit', 491.67, true)).toBe(32);
     expect(startConvertion('Rankine', 'Fahrenheit', 0, true)).toBe(-459.67);
-    expect(startConvertion('Rankine', 'Fahrenheit', -125, true)).toBe(-584.67);
+    expect(startConvertion('Rankine', 'Fahrenheit', -125, true)).toBe('Invalid input!');
 });
 
 /**
@@ -55,7 +55,7 @@ test('Fahrenheit to Kelvin', () => {
 test('Rankine to Kelvin', () => {
     expect(startConvertion('Rankine', 'Kelvin', 491.67, true)).toBe(273.15);
     expect(startConvertion('Rankine', 'Kelvin', 0, true)).toBe(0);
-    expect(startConvertion('Rankine', 'Kelvin', -125, true)).toBe(-69.4444444444);
+    expect(startConvertion('Rankine', 'Kelvin', -125, true)).toBe('Invalid input!');
 });
 
 /**
@@ -74,5 +74,5 @@ test('Fahrenheit to Rankine', () => {
 test('Kelvin to Rankine', () => {
     expect(startConvertion('Kelvin', 'Rankine', 273.15, true)).toBe(491.67);
     expect(startConvertion('Kelvin', 'Rankine', 0, true)).toBe(0);
-    expect(startConvertion('Kelvin', 'Rankine', -125, true)).toBe(-225);
+    expect(startConvertion('Kelvin', 'Rankine', -125, true)).toBe('Invalid input!');
 });
