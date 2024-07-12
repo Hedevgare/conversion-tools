@@ -30,10 +30,10 @@ export default {
 </script>
 
 <template>
-    <div class="relative">
+    <div class="dropdown-container">
         <div class="flex unit-label" @click="toggle">
-            <p class="flex-1">{{ this.active.unit }}</p>
-            <i class="dropdown-arrow margin-left-5"></i>
+            <p>{{ this.active.unit }}</p>
+            <p class="flex margin-left-5"><i class="dropdown-arrow margin-left-5"></i></p>
         </div>
         <div v-if="show" class="dropdown">
             <p v-for="unit in $props.units" :class="{ 'active-dropdown': $props.active == unit.unit }"

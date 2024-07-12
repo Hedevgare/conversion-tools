@@ -144,6 +144,12 @@ input:focus {
 
 .unit-label {
   cursor: pointer;
+  justify-content: center;
+}
+
+.dropdown-container {
+  position: relative;
+  width: 90vw;
 }
 
 .dropdown {
@@ -214,5 +220,13 @@ input:focus {
   
   .conversion-icons {
     margin-top: 5px;
+  }
+
+  .dropdown-container {
+    width: 100%;
+  }
+
+  .unit-label {
+    justify-content: space-between;
   }
 }
