@@ -72,15 +72,23 @@ export const conversions = {
     // Temperature Conversions
     "Celsius": {
         "Fahrenheit": temperatureConversions.celsiusToFahrenheit,
-        "Kelvin": temperatureConversions.celsiusToKelvin
+        "Kelvin": temperatureConversions.celsiusToKelvin,
+        "Rankine": temperatureConversions.celsiusToRankine
     },
     "Fahrenheit": {
         "Celsius": temperatureConversions.fahrenheitToCelsius,
-        "Kelvin": temperatureConversions.fahrenheitToKelvin
+        "Kelvin": temperatureConversions.fahrenheitToKelvin,
+        "Rankine": temperatureConversions.fahrenheitToRankine
     },
     "Kelvin": {
         "Celsius": temperatureConversions.kelvinToCelsius,
-        "Fahrenheit": temperatureConversions.kelvinToFahrenheit
+        "Fahrenheit": temperatureConversions.kelvinToFahrenheit,
+        "Rankine": temperatureConversions.kelvinToRankine
+    },
+    "Rankine": {
+        "Celsius": temperatureConversions.rankineToCelsius,
+        "Fahrenheit": temperatureConversions.rankineToFahrenheit,
+        "Kelvin": temperatureConversions.rankineToKelvin
     },
     // Volume Conversions
     "Litres": {

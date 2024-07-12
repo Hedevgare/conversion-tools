@@ -6,9 +6,10 @@ export default {
     },
     data() {
         const units = [
-            { unit: 'Celsius', symbol: 'C' },
-            { unit: 'Fahrenheit', symbol: 'F' },
-            { unit: 'Kelvin', symbol: 'K' }
+            { unit: 'Celsius', symbol: 'ºC' },
+            { unit: 'Fahrenheit', symbol: 'ºF' },
+            { unit: 'Kelvin', symbol: 'K' },
+            { unit: 'Rankine', symbol: 'ºR' }
         ];
         return {
             units: units,
