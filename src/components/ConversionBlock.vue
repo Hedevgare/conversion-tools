@@ -26,7 +26,7 @@ export default {
             }
         },
         startConversion() {
-            return startConvertion(this.from.unit, this.to.unit, this.fromValue, this.shouldRound? this.shouldRound : false);
+            return startConvertion(this.from.unit, this.to.unit, this.fromValue, this.shouldRound ? this.shouldRound : false);
         },
         setUnit(type, unit) {
             type === "from" ? this.from = unit : this.to = unit;
@@ -53,14 +53,8 @@ export default {
 <template>
     <div class="">
         <div class="flex flex-center conversion-block">
-            <div class="relative">
-                <div class="flex unit-label" @click="() => this.$refs.dropdownFrom.toggle()">
-                    <p class="flex-1">{{ this.from.unit }}</p>
-                    <i class="dropdown-arrow margin-left-5"></i>
-                </div>
-                <dropdown ref="dropdownFrom" :active="this.from" :units="this.units"
-                    @set-unit="(unit) => setUnit('from', unit)" />
-            </div>
+            <dropdown ref="dropdownFrom" :active="this.from" :units="this.units"
+                @set-unit="(unit) => setUnit('from', unit)" />
             <icon-input v-model="fromValue" name="fromValue" @input="validateInput" :shorter="this.from.symbol" />
         </div>
         <div class="conversion-block conversion-icons">
@@ -68,14 +62,8 @@ export default {
             <img src="/reset.svg" title="Reset values" @click="resetValues" />
         </div>
         <div class="flex flex-center conversion-block">
-            <div class="relative">
-                <div class="flex unit-label" @click="() => this.$refs.dropdownTo.toggle()">
-                    <p class="flex-1">{{ this.to.unit }}</p>
-                    <i class="dropdown-arrow margin-left-5"></i>
-                </div>
-                <dropdown ref="dropdownTo" :active="this.to" :units="this.units"
-                    @set-unit="(unit) => setUnit('to', unit)" />
-            </div>
+            <dropdown ref="dropdownTo" :active="this.to" :units="this.units"
+                @set-unit="(unit) => setUnit('to', unit)" />
             <icon-input v-model="toValue" :disabled="true" :shorter="this.to.symbol" />
         </div>
     </div>
