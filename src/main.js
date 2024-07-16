@@ -12,12 +12,14 @@ import LengthConverter from "./pages/LengthConverter.vue";
 import NumberConverter from "./pages/NumberConverter.vue";
 import TemperatureConverter from "./pages/TemperatureConverter.vue";
 import VolumeConverter from "./pages/VolumeConverter.vue";
+import WeightConverter from "./pages/WeightConverter.vue";
 
 const routes = [
     { path: '/', component: NumberConverter },
     { path: '/length', component: LengthConverter },
     { path: '/temperature', component: TemperatureConverter },
-    { path: '/volume', component: VolumeConverter }
+    { path: '/volume', component: VolumeConverter },
+    { path: '/weight', component: WeightConverter },
 ];
 
 const router = createRouter({

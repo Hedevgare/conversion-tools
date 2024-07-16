@@ -23,6 +23,8 @@ function regexValidation(unit) {
         case "Gallons":
         case "Kelvin":
         case "Rankine":
+        case "Grams":
+        case "Pounds":
             regex = new RegExp("^[0-9.0-9]+$", "g");
             break;
         case "Celsius":

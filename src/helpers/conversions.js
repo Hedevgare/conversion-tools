@@ -2,6 +2,7 @@ import * as numberConversions from "./numberConversions";
 import * as lengthConversions from "./lengthConversions";
 import * as temperatureConversions from "./temperatureConversions";
 import * as volumeConversions from "./volumeConversions";
+import * as weightConversions from "./weightConversions";
 import { validateUnit } from "./validations";
 
 export const conversions = {
@@ -96,6 +97,13 @@ export const conversions = {
     },
     "Gallons": {
         "Litres": volumeConversions.gallonsToLitres,
+    },
+    // Weight Conversions
+    "Grams": {
+        "Pounds": weightConversions.gramsToPounds,
+    },
+    "Pounds": {
+        "Grams": weightConversions.poundsToGrams,
     }
 }
 
