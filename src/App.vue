@@ -54,6 +54,12 @@ export default {
 					Volumes
 				</RouterLink>
 			</div>
+			<div class="menu-item">
+				<RouterLink class="header-link" to="/volume" @click="toggleMenu">
+					<font-awesome-icon :icon="['fa', 'weight-hanging']" />
+					Weights
+				</RouterLink>
+			</div>
 		</div>
 	</section>
 	<RouterView />

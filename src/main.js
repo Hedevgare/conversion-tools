@@ -6,7 +6,7 @@ import "./styles/main.css";
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHashtag, faRuler, faTemperatureHalf, faFlask, faF } from '@fortawesome/free-solid-svg-icons';
+import { faHashtag, faRuler, faTemperatureHalf, faFlask, faWeightHanging } from '@fortawesome/free-solid-svg-icons';
 
 import LengthConverter from "./pages/LengthConverter.vue";
 import NumberConverter from "./pages/NumberConverter.vue";
@@ -26,7 +26,7 @@ const router = createRouter({
     routes
 });
 
-library.add(faHashtag, faRuler, faTemperatureHalf, faFlask);
+library.add(faHashtag, faRuler, faTemperatureHalf, faFlask, faWeightHanging);
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
