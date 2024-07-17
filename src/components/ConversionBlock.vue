@@ -30,9 +30,7 @@ export default {
         },
         setUnit(type, unit) {
             type === "from" ? this.from = unit : this.to = unit;
-            if (this.from !== this.to) {
-                this.validateInput();
-            }
+            this.validateInput();
         },
         swapUnits() {
             let swapValue = this.fromValue;
