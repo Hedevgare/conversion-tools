@@ -60,6 +60,12 @@ export default {
 					Weights
 				</RouterLink>
 			</div>
+			<div class="menu-item">
+				<RouterLink class="header-link" to="/" @click="toggleMenu">
+					<font-awesome-icon :icon="['fa', 'clock']" />
+					Timezones
+				</RouterLink>
+			</div>
 		</div>
 	</section>
 	<RouterView />
