@@ -66,6 +66,12 @@ export default {
 					Timezones
 				</RouterLink>
 			</div>
+			<div class="menu-item">
+				<RouterLink class="header-link" to="/" @click="toggleMenu">
+					<font-awesome-icon :icon="['fa', 'clone']" />
+					Areas
+				</RouterLink>
+			</div>
 		</div>
 	</section>
 	<RouterView />
