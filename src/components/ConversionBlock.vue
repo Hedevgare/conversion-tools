@@ -35,7 +35,6 @@ export default {
                 this.from.unit !== this.to.unit ? this.toValue = this.handleConversion() : this.toValue = this.fromValue;
             }
         },
-        // TODO: Change method name
         handleConversion() {
             return startConversion(this.from.unit, this.to.unit, this.fromValue, this.shouldRound ? true : false);
         },
