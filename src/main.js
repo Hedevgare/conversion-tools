@@ -8,18 +8,16 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faHashtag, faRuler, faTemperatureHalf, faFlask, faWeightHanging, faClock, faClone } from '@fortawesome/free-solid-svg-icons';
 
-import LengthConverter from "./pages/LengthConverter.vue";
-import NumberConverter from "./pages/NumberConverter.vue";
-import TemperatureConverter from "./pages/TemperatureConverter.vue";
-import VolumeConverter from "./pages/VolumeConverter.vue";
-import WeightConverter from "./pages/WeightConverter.vue";
+import Convertion from "./pages/Convertion.vue";
+
+import routesData from "./helpers/routesData";
 
 const routes = [
-    { path: '/', component: NumberConverter },
-    { path: '/length', component: LengthConverter },
-    { path: '/temperature', component: TemperatureConverter },
-    { path: '/volume', component: VolumeConverter },
-    { path: '/weight', component: WeightConverter },
+    { path: '/', component: Convertion, props: { ...routesData.numbers } },
+    { path: '/length', component: Convertion, props: { ...routesData.length } },
+    { path: '/temperature', component: Convertion, props: { ...routesData.temperature } },
+    { path: '/volume', component: Convertion, props: { ...routesData.volume } },
+    { path: '/weight', component: Convertion, props: { ...routesData.weight } },
 ];
 
 const router = createRouter({

@@ -1,7 +1,7 @@
 <script>
 import Dropdown from '../components/Dropdown.vue';
 import Input from './Input.vue';
-import { startConvertion } from "../helpers/conversions";
+import { startConversion } from "../helpers/conversions";
 
 export default {
     components: {
@@ -17,16 +17,27 @@ export default {
             toValue: ""
         };
     },
+    watch: {
+        startFrom() {
+            this.from = this.$props.startFrom;
+            this.validateInput();
+        },
+        startTo() {
+            this.to = this.$props.startTo;
+            this.validateInput();
+        }
+    },
     methods: {
         validateInput() {
             if (!this.fromValue) {
                 this.toValue = "";
             } else {
-                this.from !== this.to ? this.toValue = this.startConversion() : this.toValue = this.fromValue;
+                this.from.unit !== this.to.unit ? this.toValue = this.handleConversion() : this.toValue = this.fromValue;
             }
         },
-        startConversion() {
-            return startConvertion(this.from.unit, this.to.unit, this.fromValue, this.shouldRound ? this.shouldRound : false);
+        // TODO: Change method name
+        handleConversion() {
+            return startConversion(this.from.unit, this.to.unit, this.fromValue, this.shouldRound ? true : false);
         },
         setUnit(type, unit) {
             type === "from" ? this.from = unit : this.to = unit;

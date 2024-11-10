@@ -107,8 +107,9 @@ export const conversions = {
     }
 }
 
-export function startConvertion(fromUnit, toUnit, value, shouldRound = false) {
+export function startConversion(fromUnit, toUnit, value, shouldRound = false) {
     if (validateUnit(fromUnit, value)) {
+        if (!conversions[fromUnit][toUnit]) return;
         let conversion = conversions[fromUnit][toUnit](value);
         if (shouldRound) {
             return Number(conversion.toFixed(10));
