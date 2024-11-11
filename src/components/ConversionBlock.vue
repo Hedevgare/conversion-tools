@@ -43,12 +43,10 @@ export default {
             this.validateInput();
         },
         swapUnits() {
-            let swapValue = this.fromValue;
-            this.fromValue = this.toValue;
-            this.toValue = swapValue;
             let swapUnit = this.from;
             this.from = this.to;
             this.to = swapUnit;
+            this.validateInput();
         },
         resetValues() {
             this.fromValue = "";
