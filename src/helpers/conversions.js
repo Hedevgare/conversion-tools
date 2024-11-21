@@ -3,7 +3,8 @@ import * as lengthConversions from "./lengthConversions";
 import * as temperatureConversions from "./temperatureConversions";
 import * as volumeConversions from "./volumeConversions";
 import * as weightConversions from "./weightConversions";
-import * as timeConversions from "./timeConversions"; 
+import * as timeConversions from "./timeConversions";
+import * as areaConversions from "./areaConversions";
 import { validateUnit } from "./validations";
 
 export const conversions = {
@@ -127,6 +128,13 @@ export const conversions = {
         "Minutes": timeConversions.daysToMinutes,
         "Hours": timeConversions.daysToHours,
     },
+    // Area Conversions
+    "Square Meters": {
+        "Ares": areaConversions.squareMetersToAre,
+    },
+    "Ares": {
+        "Square Meters": areaConversions.areToSquareMeters,
+    }
 }
 
 export function startConversion(fromUnit, toUnit, value, shouldRound = false) {

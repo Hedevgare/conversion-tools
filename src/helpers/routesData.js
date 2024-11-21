@@ -69,5 +69,15 @@ export default {
         startFromUnit: { unit: 'Hours', symbol: 'h' },
         startToUnit: { unit: 'Seconds', symbol: 's' },
         shouldRound: true
-    }
+    },
+    area: {
+        name: 'Area',
+        units: [
+            { unit: 'Square Meters', symbol: 'm²' },
+            { unit: 'Ares', symbol: 'a' },
+        ],
+        startFromUnit: { unit: 'Square Meters', symbol: 'm²' },
+        startToUnit: { unit: 'Ares', symbol: 'a' },
+        shouldRound: true
+    },
 }

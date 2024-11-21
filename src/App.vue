@@ -2,7 +2,7 @@
 export default {
 	data() {
 		return {
-			appVersion: 'v0.5.1',
+			appVersion: 'v0.6.0',
 			isMenuOpen: false,
 		}
 	},
@@ -67,8 +67,8 @@ export default {
 				</RouterLink>
 			</div>
 			<div class="menu-item">
-				<RouterLink class="header-link" to="/" @click="toggleMenu">
-					<font-awesome-icon :icon="['fa', 'clone']" />
+				<RouterLink class="header-link" to="/area" @click="toggleMenu">
+					<font-awesome-icon :icon="['fa', 'arrows-left-right-to-line']" />
 					Areas
 				</RouterLink>
 			</div>

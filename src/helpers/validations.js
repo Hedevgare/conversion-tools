@@ -29,6 +29,8 @@ function regexValidation(unit) {
         case "Minutes":
         case "Hours":
         case "Days":
+        case "Square Meters":
+        case "Ares":
             regex = new RegExp("^[0-9.0-9]+$", "g");
             break;
         case "Celsius":
