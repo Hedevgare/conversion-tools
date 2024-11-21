@@ -3,6 +3,7 @@ import * as lengthConversions from "./lengthConversions";
 import * as temperatureConversions from "./temperatureConversions";
 import * as volumeConversions from "./volumeConversions";
 import * as weightConversions from "./weightConversions";
+import * as timeConversions from "./timeConversions"; 
 import { validateUnit } from "./validations";
 
 export const conversions = {
@@ -104,7 +105,28 @@ export const conversions = {
     },
     "Pounds": {
         "Grams": weightConversions.poundsToGrams,
-    }
+    },
+    // Time Conversions
+    "Seconds": {
+        "Minutes": timeConversions.secondsToMinutes,
+        "Hours": timeConversions.secondsToHours,
+        "Days": timeConversions.secondsToDays,
+    },
+    "Minutes": {
+        "Seconds": timeConversions.minutesToSeconds,
+        "Hours": timeConversions.minutesToHours,
+        "Days": timeConversions.minutesToDays,
+    },
+    "Hours": {
+        "Seconds": timeConversions.hoursToSeconds,
+        "Minutes": timeConversions.hoursToMinutes,
+        "Days": timeConversions.hoursToDays,
+    },
+    "Days": {
+        "Seconds": timeConversions.daysToSeconds,
+        "Minutes": timeConversions.daysToMinutes,
+        "Hours": timeConversions.daysToHours,
+    },
 }
 
 export function startConversion(fromUnit, toUnit, value, shouldRound = false) {

@@ -11,7 +11,7 @@ test('Pounds to Grams', () => {
 });
 
 /**
- * Test Grams conversions
+ * Test Pounds conversions
  */
 test('Grams to Pounds', () => {
     expect(startConversion('Grams', 'Pounds', 5, true)).toBe(0.0110231131);

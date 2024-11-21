@@ -57,5 +57,17 @@ export default {
         startFromUnit: { unit: 'Grams', symbol: 'g' },
         startToUnit: { unit: 'Pounds', symbol: 'lb' },
         shouldRound: true
+    },
+    time: {
+        name: 'Time',
+        units: [
+            { unit: 'Seconds', symbol: 's' },
+            { unit: 'Minutes', symbol: 'min' },
+            { unit: 'Hours', symbol: 'h' },
+            { unit: 'Days', symbol: 'd' }
+        ],
+        startFromUnit: { unit: 'Hours', symbol: 'h' },
+        startToUnit: { unit: 'Seconds', symbol: 's' },
+        shouldRound: true
     }
 }

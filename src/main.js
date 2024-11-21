@@ -6,7 +6,7 @@ import "./styles/main.css";
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHashtag, faRuler, faTemperatureHalf, faFlask, faWeightHanging, faClock, faClone } from '@fortawesome/free-solid-svg-icons';
+import { faHashtag, faRuler, faTemperatureHalf, faFlask, faWeightHanging, faClock, faClone, faHourglass } from '@fortawesome/free-solid-svg-icons';
 
 import Convertion from "./pages/Convertion.vue";
 
@@ -18,6 +18,7 @@ const routes = [
     { path: '/temperature', component: Convertion, props: { ...routesData.temperature } },
     { path: '/volume', component: Convertion, props: { ...routesData.volume } },
     { path: '/weight', component: Convertion, props: { ...routesData.weight } },
+    { path: '/time', component: Convertion, props: { ...routesData.time } }
 ];
 
 const router = createRouter({
@@ -26,7 +27,7 @@ const router = createRouter({
     routes
 });
 
-library.add(faHashtag, faRuler, faTemperatureHalf, faFlask, faWeightHanging, faClock, faClone);
+library.add(faHashtag, faRuler, faTemperatureHalf, faFlask, faWeightHanging, faClock, faClone, faHourglass);
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)

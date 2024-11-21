@@ -25,6 +25,10 @@ function regexValidation(unit) {
         case "Rankine":
         case "Grams":
         case "Pounds":
+        case "Seconds":
+        case "Minutes":
+        case "Hours":
+        case "Days":
             regex = new RegExp("^[0-9.0-9]+$", "g");
             break;
         case "Celsius":

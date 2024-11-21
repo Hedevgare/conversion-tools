@@ -2,7 +2,7 @@
 export default {
 	data() {
 		return {
-			appVersion: 'v0.5.0',
+			appVersion: 'v0.5.1',
 			isMenuOpen: false,
 		}
 	},
@@ -61,9 +61,9 @@ export default {
 				</RouterLink>
 			</div>
 			<div class="menu-item">
-				<RouterLink class="header-link" to="/" @click="toggleMenu">
-					<font-awesome-icon :icon="['fa', 'clock']" />
-					Timezones
+				<RouterLink class="header-link" to="/time" @click="toggleMenu">
+					<font-awesome-icon :icon="['fa', 'hourglass']" />
+					Times
 				</RouterLink>
 			</div>
 			<div class="menu-item">
