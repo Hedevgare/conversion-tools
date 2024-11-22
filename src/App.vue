@@ -8,7 +8,7 @@ export default {
 	},
 	computed: {
 		footer() {
-			return `Hedegare 2024 - ${this.appVersion}${import.meta.env.PROD ? '' : '(DEVELOPMENT)'}`
+			return `Hedegare ${new Date().getFullYear()} - ${this.appVersion}${import.meta.env.PROD ? '' : '(DEVELOPMENT)'}`
 		}
 	},
 	methods: {
