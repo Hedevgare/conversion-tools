@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 .notification-container {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -34,6 +34,7 @@ export default {
     padding: 10px;
     border-radius: 5px;
     margin: 10px 0;
+    width: 255px;
 }
 .notification-text {
     margin: 0;
