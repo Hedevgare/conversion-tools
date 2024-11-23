@@ -19,7 +19,6 @@ h1 {
 }
 
 img {
-    padding-left: 15px;
     cursor: pointer;
 }
 
@@ -253,6 +252,10 @@ input:focus {
 
 .margin-left-5 {
     margin-left: 5px;
+}
+
+.padding-left-15 {
+    padding-left: 15px;
 }
 
 /* Media Queries */

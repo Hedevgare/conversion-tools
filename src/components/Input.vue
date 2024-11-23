@@ -1,12 +1,19 @@
 <script>
 export default {
     props: ['modelValue', 'disabled', 'shorter'],
-    emits: ['update:modelValue'],
+    emits: ['update:modelValue', 'open'],
     computed: {
+        disabledInput() {
+            return {
+                'disabled': this.disabled,
+                'cursor-pointer': this.disabled
+            }
+        },
         symbolContainer() {
             return {
                 'input-symbol-container': true,
-                'disabled': this.disabled
+                'disabled': this.disabled,
+                'cursor-pointer': this.disabled
             }
         },
         symbolClasses() {
@@ -15,17 +22,31 @@ export default {
                 'disabled': this.disabled
             }
         }
+    },
+    methods: {
+        copyToClipboard() {
+            if (!this.disabled) return; // If the input is disabled, means that's the one that holds the converted value to be copied
+            this.$emit("open");
+            navigator.clipboard.writeText(this.modelValue)
+                .then(() => {
+                    this.copied = true;
+                    console.log('Copied to clipboard');
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+        }
     }
 }
 </script>
 
 <template>
-    <div class="input-container">
-        <input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :disabled="disabled"
+    <div class="input-container" @click="copyToClipboard">
+        <input :class="disabledInput" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :readonly="disabled"
             autocomplete="off" />
-            <div :class="symbolContainer">
-                <p :class="symbolClasses">{{ $props.shorter }}</p>
-            </div>
+        <div :class="symbolContainer">
+            <p :class="symbolClasses">{{ $props.shorter }}</p>
+        </div>
     </div>
 </template>
 
@@ -53,5 +74,9 @@ export default {
 
 .disabled {
     background-color: #9e9e9e;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 </style>

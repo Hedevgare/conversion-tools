@@ -1,12 +1,14 @@
 <script>
 import Dropdown from '../components/Dropdown.vue';
 import Input from './Input.vue';
+import Notification from './Notification.vue';
 import { startConversion } from "../helpers/conversions";
 
 export default {
     components: {
         'dropdown': Dropdown,
-        'icon-input': Input
+        'icon-input': Input,
+        'notification': Notification
     },
     props: ["startFrom", "startTo", "units", "shouldRound"],
     data() {
@@ -14,7 +16,9 @@ export default {
             from: this.$props.startFrom,
             to: this.$props.startTo,
             fromValue: "",
-            toValue: ""
+            toValue: "",
+            showNotification: false,
+            timeoutId: null
         };
     },
     watch: {
@@ -51,6 +55,16 @@ export default {
         resetValues() {
             this.fromValue = "";
             this.toValue = "";
+        },
+        openNotification() {
+            this.showNotification = true;
+            clearTimeout(this.timeoutId);
+            this.timeoutId = setTimeout(() => {
+                this.showNotification = false;
+            }, 5000)
+        },
+        closeNotification() {
+            this.showNotification = false;
         }
     },
 };
@@ -64,13 +78,14 @@ export default {
             <icon-input v-model="fromValue" name="fromValue" @input="validateInput" :shorter="this.from.symbol" />
         </div>
         <div class="conversion-block conversion-icons">
-            <img src="/swap.svg" title="Swap units" @click="swapUnits" />
-            <img src="/reset.svg" title="Reset values" @click="resetValues" />
+            <img class="padding-left-15" src="/swap.svg" title="Swap units" @click="swapUnits" />
+            <img class="padding-left-15" src="/reset.svg" title="Reset values" @click="resetValues" />
         </div>
         <div class="flex flex-center conversion-block">
             <dropdown ref="dropdownTo" :active="this.to" :units="this.units"
                 @set-unit="(unit) => setUnit('to', unit)" />
-            <icon-input v-model="toValue" :disabled="true" :shorter="this.to.symbol" />
+            <icon-input v-model="toValue" @open="openNotification" :disabled="true" :shorter="this.to.symbol" />
         </div>
+        <notification v-if="showNotification" @close="closeNotification" data="Copied to the clipboard!" type="success" />
     </div>
 </template>
