@@ -6,7 +6,7 @@ export function feetToCentimeters(feet) {
 }
 
 export function inchesToCentimeters(inches) {
-    feetToCentimeters(inchesToFeet(inches));
+    return feetToCentimeters(inchesToFeet(inches));
 }
 
 export function kilometersToCentimeters(kilometers) {
@@ -79,7 +79,7 @@ export function feetToKilometers(feet) {
 }
 
 export function inchesToKilometers(inches) {
-    feetToKilometers(inchesToFeet(inches));
+    return feetToKilometers(inchesToFeet(inches));
 }
 
 export function metersToKilometers(meters) {
