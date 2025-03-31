@@ -9,6 +9,11 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: #a0d2db;
+}
+
 hr {
     margin: 0 30px;
     border-color: #a0d2db;

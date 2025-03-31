@@ -2,13 +2,13 @@
 export default {
     data() {
         return {
-            appVersion: 'v0.6.1',
+            appVersion: 'v0.6.2',
             isMenuOpen: false,
         }
     },
     computed: {
         footer() {
-            return `Hedegare ${new Date().getFullYear()} - ${this.appVersion}${import.meta.env.PROD ? '' : '(DEVELOPMENT)'}`
+            return `${new Date().getFullYear()} - ${this.appVersion}${import.meta.env.PROD ? '' : '(DEVELOPMENT)'}`
         }
     },
     methods: {
@@ -76,6 +76,6 @@ export default {
     </section>
     <RouterView />
     <div class="footer">
-        <p>{{ footer }}</p>
+        <p><a href="#">Hedegare</a> {{ footer }}</p>
     </div>
 </template>
