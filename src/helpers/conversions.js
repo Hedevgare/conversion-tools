@@ -35,6 +35,7 @@ export const conversions = {
         "Inches": lengthConversions.centimetersToInches,
         "Kilometers": lengthConversions.centimetersToKilometers,
         "Meters": lengthConversions.centimetersToMeters,
+        "Miles": lengthConversions.centimetersToMiles,
         "Millimeters": lengthConversions.centimetersToMillimeters
     },
     "Feet": {
@@ -42,6 +43,7 @@ export const conversions = {
         "Inches": lengthConversions.feetToInches,
         "Kilometers": lengthConversions.feetToKilometers,
         "Meters": lengthConversions.feetToMeters,
+        "Miles": lengthConversions.feetToMiles,
         "Millimeters": lengthConversions.feetToMillimeters
     },
     "Inches": {
@@ -49,6 +51,7 @@ export const conversions = {
         "Feet": lengthConversions.inchesToFeet,
         "Kilometers": lengthConversions.inchesToKilometers,
         "Meters": lengthConversions.inchesToMeters,
+        "Miles": lengthConversions.inchesToMiles,
         "Millimeters": lengthConversions.inchesToMillimeters
     },
     "Kilometers": {
@@ -56,6 +59,7 @@ export const conversions = {
         "Feet": lengthConversions.kilometersToFeet,
         "Inches": lengthConversions.kilometersToInches,
         "Meters": lengthConversions.kilometersToMeters,
+        "Miles": lengthConversions.kilometersToMiles,
         "Millimeters": lengthConversions.kilometersToMillimeters
     },
     "Meters": {
@@ -63,6 +67,7 @@ export const conversions = {
         "Feet": lengthConversions.metersToFeet,
         "Inches": lengthConversions.metersToInches,
         "Kilometers": lengthConversions.metersToKilometers,
+        "Miles": lengthConversions.metersToMiles,
         "Millimeters": lengthConversions.metersToMillimeters
     },
     "Millimeters": {
@@ -70,7 +75,16 @@ export const conversions = {
         "Feet": lengthConversions.millimetersToFeet,
         "Inches": lengthConversions.millimetersToInches,
         "Kilometers": lengthConversions.millimetersToKilometers,
-        "Meters": lengthConversions.millimetersToMeters
+        "Meters": lengthConversions.millimetersToMeters,
+        "Miles": lengthConversions.millimetersToMiles
+    },
+    "Miles": {
+        "Centimeters": lengthConversions.milesToCentimeters,
+        "Feet": lengthConversions.milesToFeet,
+        "Inches": lengthConversions.milesToInches,
+        "Kilometers": lengthConversions.milesToKilometers,
+        "Meters": lengthConversions.milesToMeters,
+        "Millimeters": lengthConversions.milesToMillimeters
     },
     // Temperature Conversions
     "Celsius": {

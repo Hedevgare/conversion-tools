@@ -24,6 +24,10 @@ test('Kilometers to Feet', () => {
     expect(startConversion('Kilometers', 'Feet', 0.7, true)).toBe(2296.5879265092);
     expect(startConversion('Kilometers', 'Feet', 0, true)).toBe(0);
 });
+test('Miles to Feet', () => {
+    expect(startConversion('Miles', 'Feet', 0.5, true)).toBe(2640);
+    expect(startConversion('Miles', 'Feet', 0, true)).toBe(0);
+});
 
 /**
  * Test inches conversions
@@ -47,6 +51,10 @@ test('Millimeters to Inches', () => {
 test('Kilometers to Inches', () => {
     expect(startConversion('Kilometers', 'Inches', 0.7, true)).toBe(27559.0551181102);
     expect(startConversion('Kilometers', 'Inches', 0, true)).toBe(0);
+});
+test('Miles to Inches', () => {
+    expect(startConversion('Miles', 'Inches', 0.5, true)).toBe(31680);
+    expect(startConversion('Miles', 'Inches', 0, true)).toBe(0);
 });
 
 /**
@@ -72,6 +80,10 @@ test('Kilometers to Centimeters', () => {
     expect(startConversion('Kilometers', 'Centimeters', 0.7, true)).toBe(70000);
     expect(startConversion('Kilometers', 'Centimeters', 0, true)).toBe(0);
 });
+test('Miles to Centimeters', () => {
+    expect(startConversion('Miles', 'Centimeters', 0.5, true)).toBe(80467.2);
+    expect(startConversion('Miles', 'Centimeters', 0, true)).toBe(0);
+});
 
 /**
  * Test millimeters conversions
@@ -96,6 +108,10 @@ test('Kilometers to Millimeters', () => {
     expect(startConversion('Kilometers', 'Millimeters', 0.7, true)).toBe(700000);
     expect(startConversion('Kilometers', 'Millimeters', 0, true)).toBe(0);
 });
+test('Miles to Millimeters', () => {
+    expect(startConversion('Miles', 'Millimeters', 0.5, true)).toBe(804672);
+    expect(startConversion('Miles', 'Millimeters', 0, true)).toBe(0);
+});
 /**
  * Test kilometers conversions
  */
@@ -118,6 +134,38 @@ test('Centimeters to Kilometers', () => {
 test('Millimeters to Kilometers', () => {
     expect(startConversion('Millimeters', 'Kilometers', 5, true)).toBe(0.000005);
     expect(startConversion('Millimeters', 'Kilometers', 0, true)).toBe(0);
+});
+test('Miles to Kilometers', () => {
+    expect(startConversion('Miles', 'Kilometers', 0.5, true)).toBe(0.804672);
+    expect(startConversion('Miles', 'Kilometers', 0, true)).toBe(0);
+});
+
+/**
+ * Test miles conversions
+ */
+test('Meters to Miles', () => {
+    expect(startConversion('Meters', 'Miles', 2000, true)).toBe(1.2427423845);
+    expect(startConversion('Meters', 'Miles', 0, true)).toBe(0);
+});
+test('Feet to Miles', () => {
+    expect(startConversion('Feet', 'Miles', 1750, true)).toBe(0.3314393939);
+    expect(startConversion('Feet', 'Miles', 0, true)).toBe(0);
+});
+test('Inches to Miles', () => {
+    expect(startConversion('Inches', 'Miles', 3000, true)).toBe(0.0473484848);
+    expect(startConversion('Inches', 'Miles', 0, true)).toBe(0);
+});
+test('Centimeters to Miles', () => {
+    expect(startConversion('Centimeters', 'Miles', 5000, true)).toBe(0.0310685596);
+    expect(startConversion('Centimeters', 'Miles', 0, true)).toBe(0);
+});
+test('Millimeters to Miles', () => {
+    expect(startConversion('Millimeters', 'Miles', 60000000, true)).toBe(37.2822715342);
+    expect(startConversion('Millimeters', 'Miles', 0, true)).toBe(0);
+});
+test('Kilometers to Miles', () => {
+    expect(startConversion('Kilometers', 'Miles', 4, true)).toBe(2.4854847689);
+    expect(startConversion('Kilometers', 'Miles', 0, true)).toBe(0);
 });
 
 /**

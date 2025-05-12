@@ -21,6 +21,10 @@ export function millimetersToCentimeters(millimeters) {
     return metersToCentimeters(millimetersToMeters(millimeters));
 }
 
+export function milesToCentimeters(miles) {
+    return feetToCentimeters(milesToFeet(miles));
+}
+
 /**
  * Feet conversions
 */
@@ -42,6 +46,10 @@ export function metersToFeet(meters) {
 
 export function millimetersToFeet(millimeters) {
     return metersToFeet(millimetersToMeters(millimeters));
+}
+
+export function milesToFeet(miles) {
+    return miles * 5280;
 }
 
 /**
@@ -67,6 +75,10 @@ export function millimetersToInches(millimeters) {
     return feetToInches(millimetersToFeet(millimeters));
 }
 
+export function milesToInches(miles) {
+    return feetToInches(milesToFeet(miles));
+}
+
 /**
  * Kilometers conversions
 */
@@ -88,6 +100,10 @@ export function metersToKilometers(meters) {
 
 export function millimetersToKilometers(millimeters) {
     return metersToKilometers(millimetersToMeters(millimeters));
+}
+
+export function milesToKilometers(miles) {
+    return feetToKilometers(milesToFeet(miles));
 }
 
 /**
@@ -113,6 +129,10 @@ export function millimetersToMeters(millimeters) {
     return millimeters / 1000;
 }
 
+export function milesToMeters(miles) {
+    return feetToMeters(milesToFeet(miles));
+}
+
 /**
  * Millimeters conversions
  */
@@ -134,4 +154,35 @@ export function kilometersToMillimeters(kilometers) {
 
 export function metersToMillimeters(meters) {
     return meters * 1000;
+}
+
+export function milesToMillimeters(miles) {
+    return feetToMillimeters(milesToFeet(miles));
+}
+
+/**
+ * Miles conversions
+ */
+export function centimetersToMiles(centimeters) {
+    return kilometersToMiles(centimetersToKilometers(centimeters));
+}
+
+export function feetToMiles(feet) {
+    return kilometersToMiles(feetToKilometers(feet));
+}
+
+export function inchesToMiles(inches) {
+    return kilometersToMiles(inchesToKilometers(inches));
+}
+
+export function kilometersToMiles(kilometers) {
+    return kilometers / 1.609344;
+}
+
+export function metersToMiles(meters) {
+    return kilometersToMiles(metersToKilometers(meters));
+}
+
+export function millimetersToMiles(millimeters) {
+    return kilometersToMiles(millimetersToKilometers(millimeters));
 }

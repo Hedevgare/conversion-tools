@@ -19,7 +19,8 @@ export default {
 			{ unit: 'Centimeters', symbol: 'cm' },
 			{ unit: 'Kilometers', symbol: 'km' },
 			{ unit: 'Feet', symbol: 'ft' },
-			{ unit: 'Inches', symbol: 'in' }
+			{ unit: 'Inches', symbol: 'in' },
+            { unit: 'Miles', symbol: 'mi' },
 		],
         startFromUnit: { unit: 'Meters', symbol: 'm' },
         startToUnit: { unit: 'Feet', symbol: 'ft' },
