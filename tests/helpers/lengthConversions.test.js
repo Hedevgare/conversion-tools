@@ -1,6 +1,8 @@
 import { expect, test } from 'vitest'
 import { startConversion } from '../../src/helpers/conversions';
 
+const errorMessage = "Invalid!";
+
 /**
  * Test feet conversions
  */
@@ -172,8 +174,8 @@ test('Kilometers to Miles', () => {
  * Test invalid inputs
  */
 test('Negative Numbers', () => {
-    expect(startConversion('Meters', 'Feet', -1)).toBe('Invalid input!');
+    expect(startConversion('Meters', 'Feet', -1)).toBe(errorMessage);
 });
 test('Input with Text Characters', () => {
-    expect(startConversion('Meters', 'Feet', 'test')).toBe('Invalid input!');
+    expect(startConversion('Meters', 'Feet', 'test')).toBe(errorMessage);
 });

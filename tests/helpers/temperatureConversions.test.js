@@ -1,6 +1,8 @@
 import { expect, test } from "vitest";
 import { startConversion } from '../../src/helpers/conversions';
 
+const errorMessage = "Invalid!";
+
 /**
  * Test Celsius conversions
  */
@@ -12,12 +14,12 @@ test('Fahrenheit to Celsius', () => {
 test('Kelvin to Celsius', () => {
     expect(startConversion('Kelvin', 'Celsius', 273.15, true)).toBe(0);
     expect(startConversion('Kelvin', 'Celsius', 0, true)).toBe(-273.15);
-    expect(startConversion('Kelvin', 'Celsius', -125, true)).toBe('Invalid input!');
+    expect(startConversion('Kelvin', 'Celsius', -125, true)).toBe(errorMessage);
 });
 test('Rankine to Celsius', () => {
     expect(startConversion('Rankine', 'Celsius', 491.67, true)).toBe(0);
     expect(startConversion('Rankine', 'Celsius', 0, true)).toBe(-273.15);
-    expect(startConversion('Rankine', 'Celsius', -125, true)).toBe('Invalid input!');
+    expect(startConversion('Rankine', 'Celsius', -125, true)).toBe(errorMessage);
 });
 
 /**
@@ -31,12 +33,12 @@ test('Celsius to Fahrenheit', () => {
 test('Kelvin to Fahrenheit', () => {
     expect(startConversion('Kelvin', 'Fahrenheit', 273.15, true)).toBe(32);
     expect(startConversion('Kelvin', 'Fahrenheit', 0, true)).toBe(-459.67);
-    expect(startConversion('Kelvin', 'Fahrenheit', -125, true)).toBe('Invalid input!');
+    expect(startConversion('Kelvin', 'Fahrenheit', -125, true)).toBe(errorMessage);
 });
 test('Rankine to Fahrenheit', () => {
     expect(startConversion('Rankine', 'Fahrenheit', 491.67, true)).toBe(32);
     expect(startConversion('Rankine', 'Fahrenheit', 0, true)).toBe(-459.67);
-    expect(startConversion('Rankine', 'Fahrenheit', -125, true)).toBe('Invalid input!');
+    expect(startConversion('Rankine', 'Fahrenheit', -125, true)).toBe(errorMessage);
 });
 
 /**
@@ -55,7 +57,7 @@ test('Fahrenheit to Kelvin', () => {
 test('Rankine to Kelvin', () => {
     expect(startConversion('Rankine', 'Kelvin', 491.67, true)).toBe(273.15);
     expect(startConversion('Rankine', 'Kelvin', 0, true)).toBe(0);
-    expect(startConversion('Rankine', 'Kelvin', -125, true)).toBe('Invalid input!');
+    expect(startConversion('Rankine', 'Kelvin', -125, true)).toBe(errorMessage);
 });
 
 /**
@@ -74,5 +76,5 @@ test('Fahrenheit to Rankine', () => {
 test('Kelvin to Rankine', () => {
     expect(startConversion('Kelvin', 'Rankine', 273.15, true)).toBe(491.67);
     expect(startConversion('Kelvin', 'Rankine', 0, true)).toBe(0);
-    expect(startConversion('Kelvin', 'Rankine', -125, true)).toBe('Invalid input!');
+    expect(startConversion('Kelvin', 'Rankine', -125, true)).toBe(errorMessage);
 });

@@ -161,6 +161,6 @@ export function startConversion(fromUnit, toUnit, value, shouldRound = false) {
             return conversion;
         }
     } else {
-        return "Invalid input!";
+        return "Invalid!";
     }
 }

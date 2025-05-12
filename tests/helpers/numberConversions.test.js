@@ -1,6 +1,8 @@
 import { expect, test } from 'vitest'
 import { startConversion } from '../../src/helpers/conversions';
 
+const errorMessage = "Invalid!";
+
 /**
  * Test binary conversions
  */
@@ -98,14 +100,14 @@ test('Decimal to Hexadecimal', () => {
  */
 
 test('Invalid Binary', () => {
-    expect(startConversion('Binary', 'Decimal', '2')).toBe('Invalid input!');
+    expect(startConversion('Binary', 'Decimal', '2')).toBe(errorMessage);
 });
 test('Invalid Octal', () => {
-    expect(startConversion('Octal', 'Decimal', '8')).toBe('Invalid input!');
+    expect(startConversion('Octal', 'Decimal', '8')).toBe(errorMessage);
 });
 test('Invalid Decimal', () => {
-    expect(startConversion('Decimal', 'Binary', '2.5')).toBe('Invalid input!');
+    expect(startConversion('Decimal', 'Binary', '2.5')).toBe(errorMessage);
 });
 test('Invalid Hexadecimal', () => {
-    expect(startConversion('Hexadecimal', 'Decimal', '1G')).toBe('Invalid input!');
+    expect(startConversion('Hexadecimal', 'Decimal', '1G')).toBe(errorMessage);
 });
