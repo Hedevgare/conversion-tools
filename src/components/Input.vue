@@ -47,29 +47,3 @@ export default {
         </div>
     </div>
 </template>
-
-<style scoped>
-.input-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.input-symbol-container {
-    width: 50px;
-    background-color: #2e2e3a;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.input-symbol {
-    margin: 0;
-    line-height: 50px;
-    border-left: 1px dashed #a0d2db;
-    color: #a0d2db;
-}
-
-.cursor-pointer {
-    cursor: pointer;
-}
-</style>
