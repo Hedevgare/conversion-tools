@@ -43,7 +43,7 @@ export default {
             <p class="flex margin-10"><i class="dropdown-arrow margin-left-5"></i></p>
         </div>
         <div v-if="show" class="dropdown">
-            <p v-for="unit in $props.units" :class="{ 'active-dropdown': $props.active == unit.unit }"
+            <p v-for="unit in $props.units" :class="{ 'active-dropdown': $props.active.unit == unit.unit }"
                 @click="changeUnit(unit)">{{ unit.unit }}</p>
         </div>
     </div>

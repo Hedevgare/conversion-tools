@@ -251,6 +251,7 @@ input:focus {
 
 .active-dropdown {
     color: #a0d2db;
+    text-decoration: underline;
 }
 
 .relative {
