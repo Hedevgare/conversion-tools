@@ -71,20 +71,20 @@ export default {
 </script>
 
 <template>
-    <div class="">
+    <div class="flex flex-center conversion-container">
         <div class="flex flex-center conversion-block">
+            <icon-input v-model="fromValue" name="fromValue" @input="validateInput" :shorter="this.from.symbol" />
             <dropdown ref="dropdownFrom" :active="this.from" :units="this.units"
                 @set-unit="(unit) => setUnit('from', unit)" />
-            <icon-input v-model="fromValue" name="fromValue" @input="validateInput" :shorter="this.from.symbol" />
         </div>
-        <div class="conversion-block conversion-icons">
-            <img class="padding-left-15" src="/swap.svg" title="Swap units" @click="swapUnits" />
-            <img class="padding-left-15" src="/reset.svg" title="Reset values" @click="resetValues" />
+        <div class="flex conversion-block conversion-icons">
+            <img class="padding-15" src="/swap.svg" title="Swap units" @click="swapUnits" />
+            <img class="padding-15" src="/reset.svg" title="Reset values" @click="resetValues" />
         </div>
         <div class="flex flex-center conversion-block">
+            <icon-input v-model="toValue" @open="openNotification" :disabled="true" :shorter="this.to.symbol" />
             <dropdown ref="dropdownTo" :active="this.to" :units="this.units"
                 @set-unit="(unit) => setUnit('to', unit)" />
-            <icon-input v-model="toValue" @open="openNotification" :disabled="true" :shorter="this.to.symbol" />
         </div>
         <notification v-if="showNotification" @close="closeNotification" data="Copied to the clipboard!" type="success" />
     </div>

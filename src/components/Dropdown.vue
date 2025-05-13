@@ -6,6 +6,13 @@ export default {
             show: false
         };
     },
+    computed: {
+        borderBottom() {
+            return {
+                'dropdown-container-active': this.show
+            }
+        },
+    },
     methods: {
         toggle() {
             this.show = !this.show;
@@ -30,10 +37,10 @@ export default {
 </script>
 
 <template>
-    <div class="dropdown-container">
+    <div class="dropdown-container" :class="borderBottom">
         <div class="flex unit-label" @click="toggle">
-            <p>{{ this.active.unit }}</p>
-            <p class="flex margin-left-5"><i class="dropdown-arrow margin-left-5"></i></p>
+            <p class="margin-10">{{ this.active.unit }}</p>
+            <p class="flex margin-10"><i class="dropdown-arrow margin-left-5"></i></p>
         </div>
         <div v-if="show" class="dropdown">
             <p v-for="unit in $props.units" :class="{ 'active-dropdown': $props.active == unit.unit }"

@@ -29,16 +29,15 @@ img {
 
 input {
     border: none;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
     height: 30px;
     width: 200px;
-    font-size: 20px;
+    font-size: 35px;
     text-align: center;
+    background-color: #2e2e3a;
+    color: #ffffff;
     border-color: gray;
     margin-left: 0;
+    padding: 30px 0;
 }
 
 input:disabled {
@@ -146,8 +145,7 @@ input:focus {
     font-size: 40px;
 }
 
-/*  */
-
+/* Main content */
 .body {
     text-align: center;
     margin: auto;
@@ -175,9 +173,12 @@ input:focus {
     flex-direction: column;
 }
 
+.conversion-container {
+    flex-direction: column;
+}
+
 .conversion-block {
     flex-direction: column;
-    margin: auto;
     text-align: inherit;
 }
 
@@ -187,7 +188,8 @@ input:focus {
 }
 
 .conversion-icons {
-    margin-top: 20px;
+    margin: 20px 0;
+    flex-direction: row;
 }
 
 .underline-text {
@@ -196,21 +198,34 @@ input:focus {
 
 .unit-label {
     cursor: pointer;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .dropdown-container {
     position: relative;
-    width: 90vw;
+    width: 100%;
+    background-color: #2e2e3a;
+    color: #ffffff;
+    border: 1px solid #a0d2db;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.dropdown-container-active {
+    border-bottom-style: dashed;
+    border-radius: 0;
 }
 
 .dropdown {
-    background-color: #1a1a25;
-    border: 1px #000000 solid;
-    border-bottom-right-radius: 5px;
+    border: 1px solid #a0d2db;
+    border-top: none;
     border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: 1px;
+    margin-left: -1px;
     position: absolute;
     width: 100%;
+    background-color: #2e2e3a;
     min-width: fit-content;
     font-size: 16px;
     z-index: 1;
@@ -251,6 +266,10 @@ input:focus {
     margin: auto;
 }
 
+.margin-10 {
+    margin: 10px;
+}
+
 .margin-right-5 {
     margin-right: 5px;
 }
@@ -259,34 +278,37 @@ input:focus {
     margin-left: 5px;
 }
 
+.margin-bottom-50 {
+    margin-bottom: 50px;
+}
+
+.padding-15 {
+    padding: 15px;
+}
+
 .padding-left-15 {
     padding-left: 15px;
 }
 
+
 /* Media Queries */
+@media screen and (min-width: 900px) {
+    .conversion-container {
+        flex-direction: row;
+    }
+
+    .conversion-icons {
+        flex-direction: column;
+        margin: 0 40px;
+    }
+}
+
 @media screen and (min-width: 500px) {
     input {
-        margin-left: 30px;
+        width: 300px;
     }
 
     .menu-container {
         justify-content: start;
-    }
-
-    .conversion-block {
-        flex-direction: row;
-        text-align: left;
-    }
-
-    .conversion-icons {
-        margin-top: 5px;
-    }
-
-    .dropdown-container {
-        width: 100%;
-    }
-
-    .unit-label {
-        justify-content: space-between;
     }
 }

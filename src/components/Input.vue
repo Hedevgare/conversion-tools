@@ -5,21 +5,18 @@ export default {
     computed: {
         disabledInput() {
             return {
-                'disabled': this.disabled,
                 'cursor-pointer': this.disabled
             }
         },
         symbolContainer() {
             return {
                 'input-symbol-container': true,
-                'disabled': this.disabled,
                 'cursor-pointer': this.disabled
             }
         },
         symbolClasses() {
             return {
                 'input-symbol': true,
-                'disabled': this.disabled
             }
         }
     },
@@ -43,7 +40,8 @@ export default {
 <template>
     <div class="input-container" @click="copyToClipboard">
         <input :class="disabledInput" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :readonly="disabled"
-            autocomplete="off" />
+            autocomplete="off"
+            placeholder="0" />
         <div :class="symbolContainer">
             <p :class="symbolClasses">{{ $props.shorter }}</p>
         </div>
@@ -59,21 +57,16 @@ export default {
 
 .input-symbol-container {
     width: 50px;
-    background-color: #ffffff;
-    padding: 3.5px 0;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    background-color: #2e2e3a;
+    padding: 20px 0;
     text-align: center;
 }
 
 .input-symbol {
     margin: 0;
-    border-left: 1px solid #2e2e3a;
-    color: #000000;
-}
-
-.disabled {
-    background-color: #9e9e9e;
+    line-height: 50px;
+    border-left: 1px dashed #a0d2db;
+    color: #a0d2db;
 }
 
 .cursor-pointer {
