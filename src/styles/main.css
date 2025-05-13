@@ -215,6 +215,7 @@ input:focus {
     background-color: #2e2e3a;
     color: #ffffff;
     border: 1px solid #a0d2db;
+    border-top-style: dashed;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -266,6 +267,10 @@ input:focus {
     display: flex;
     flex-direction: row;
     align-items: center;
+    outline: 1px solid #a0d2db;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .input-symbol-container {
