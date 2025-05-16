@@ -31,7 +31,7 @@ export default {
 
 <template>
     <section class="body">
-        <h1 class="title margin-bottom-50">{{ this.$props.name }} Converter</h1>
+        <h1 class="title">{{ this.$props.name }} Converter</h1>
         <conversion-block :startFrom="this.$props.startFromUnit" :startTo="this.$props.startToUnit" :units="this.$props.units" :shouldRound="this.$props.shouldRound" />
     </section>
 </template>

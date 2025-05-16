@@ -71,6 +71,7 @@ export default {
 </script>
 
 <template>
+    <p class="margin-bottom-50">Enter a value below and it will be converted from {{ this.from.unit }} to {{ this.to.unit }}</p>
     <div class="flex flex-center conversion-container">
         <div class="flex flex-center conversion-block">
             <icon-input v-model="fromValue" name="fromValue" @input="validateInput" :shorter="this.from.symbol" />
