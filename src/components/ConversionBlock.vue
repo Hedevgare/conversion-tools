@@ -79,8 +79,8 @@ export default {
                 @set-unit="(unit) => setUnit('from', unit)" />
         </div>
         <div class="flex conversion-block conversion-icons">
-            <img class="padding-15" src="/swap.svg" title="Swap units" @click="swapUnits" />
-            <img class="padding-15" src="/reset.svg" title="Reset values" @click="resetValues" />
+            <img class="conversion-icon padding-15" src="/swap.svg" title="Swap units" @click="swapUnits" />
+            <img class="conversion-icon padding-15" src="/reset.svg" title="Reset values" @click="resetValues" />
         </div>
         <div class="flex flex-center conversion-block">
             <icon-input v-model="toValue" @open="openNotification" :disabled="true" :shorter="this.to.symbol" />

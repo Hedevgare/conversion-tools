@@ -196,6 +196,10 @@ input:focus {
     flex-direction: row;
 }
 
+.conversion-icon {
+    rotate: 90deg;
+}
+
 .title {
     color: #a0d2db;
 }
