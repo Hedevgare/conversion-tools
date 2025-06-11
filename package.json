@@ -1,6 +1,7 @@
 {
-  "name": "bin-to-dec",
+  "name": "conversion-tools",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
