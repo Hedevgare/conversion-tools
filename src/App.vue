@@ -76,6 +76,12 @@ export default {
     </section>
     <RouterView />
     <div class="footer">
-        <p><a href="#">Hedegare</a> {{ footer }}</p>
+        <p>
+            <a href="https://hedegaremoreira.com" target="_blank">Hedegare</a> {{ footer }} - 
+            <a href="https://coff.ee/hedegare" target="_blank" rel="noopener" title="Buy me a coffee">
+                <font-awesome-icon :icon="['fa', 'coffee']" />
+                <span class="footer-tipjar-text">Buy me a coffee</span>
+            </a>
+        </p>
     </div>
 </template>

@@ -156,6 +156,10 @@ input:focus {
     color: #a0d2db;
 }
 
+.footer-tipjar-text {
+    margin-left: 0.5em;
+}
+
 .flex {
     display: flex;
 }
