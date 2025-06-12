@@ -2,7 +2,7 @@
 export default {
     data() {
         return {
-            appVersion: 'v0.6.6',
+            appVersion: 'v0.7.0',
             isMenuOpen: false,
         }
     },
