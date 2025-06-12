@@ -21,7 +21,6 @@ Easily convert between units in the following categories:
 This project was developed using the following technologies:
 
 [![JS-logo]][JS-link] [![Vue-logo]][Vue-link]
-
 [![Vite-logo]][Vite-link] [![Vitest-logo]][Vitest-link]
 
 ## Project Setup
@@ -63,4 +62,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [Vite-link]: https://vite.dev
 
 [Vitest-logo]: https://img.shields.io/badge/vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white
-[Vitest-link]: https://vite.dev
+[Vitest-link]: https://vitest.dev
