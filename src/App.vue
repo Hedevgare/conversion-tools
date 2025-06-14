@@ -26,8 +26,8 @@ export default {
             <div class="bar-2"></div>
             <div class="bar-3"></div>
         </div>
+        <hr />
     </div>
-    <hr />
     <section class="menu" :class="{ 'open': isMenuOpen }">
         <div class="menu-container">
             <div class="menu-item">
@@ -74,7 +74,9 @@ export default {
             </div>
         </div>
     </section>
-    <RouterView />
+    <section class="body" :class="{ 'open': isMenuOpen }">
+        <RouterView />
+    </section>
     <div class="footer">
         <p>
             <a href="https://hedegaremoreira.com" target="_blank">Hedegare</a> {{ footer }} - 

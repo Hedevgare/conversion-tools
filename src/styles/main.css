@@ -54,7 +54,7 @@ input:focus {
 #app {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #2e2e3a;
     color: #ffffff;
     margin: 0;
@@ -64,8 +64,10 @@ input:focus {
 /* Classes */
 /* Header and Menu */
 .header {
-    display: flex;
-    flex-direction: row;
+    position: fixed;
+    width: 100%;
+    height: 55px;
+    background-color: #2e2e3a;
 }
 
 .header-link {
@@ -80,7 +82,7 @@ input:focus {
 }
 
 .hamburger-button {
-    margin: 10px 30px;
+    margin: 15px 30px;
     cursor: pointer;
 }
 
@@ -110,11 +112,12 @@ input:focus {
 .menu {
     display: none;
     z-index: 1;
-    width: 100%;
-    height: calc(100% - 55px);
-    top: 55px;
     position: fixed;
+    width: 100%;
+    top: 55px;
+    bottom: 0;
     background-color: #2e2e3a;
+    overflow-y: scroll;
 }
 
 .menu.open {
@@ -149,6 +152,12 @@ input:focus {
 .body {
     text-align: center;
     margin: auto;
+    padding-top: 55px; /* Adjust for fixed header */;
+    padding-bottom: 50px; /* Space for footer */
+}
+
+.body.open {
+    overflow: unset;
 }
 
 .footer {
