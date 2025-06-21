@@ -25,6 +25,10 @@ export function milesToCentimeters(miles) {
     return feetToCentimeters(milesToFeet(miles));
 }
 
+export function yardsToCentimeters(yards) {
+    return metersToCentimeters(yardsToMeters(yards));
+}
+
 /**
  * Feet conversions
 */
@@ -50,6 +54,10 @@ export function millimetersToFeet(millimeters) {
 
 export function milesToFeet(miles) {
     return miles * 5280;
+}
+
+export function yardsToFeet(yards) {
+    return yards * 3;
 }
 
 /**
@@ -79,6 +87,10 @@ export function milesToInches(miles) {
     return feetToInches(milesToFeet(miles));
 }
 
+export function yardsToInches(yards) {
+    return yards * 36;
+}
+
 /**
  * Kilometers conversions
 */
@@ -104,6 +116,10 @@ export function millimetersToKilometers(millimeters) {
 
 export function milesToKilometers(miles) {
     return feetToKilometers(milesToFeet(miles));
+}
+
+export function yardsToKilometers(yards) {
+    return metersToKilometers(yardsToMeters(yards));
 }
 
 /**
@@ -133,6 +149,10 @@ export function milesToMeters(miles) {
     return feetToMeters(milesToFeet(miles));
 }
 
+export function yardsToMeters(yards) {
+    return yards * 0.9144;
+}
+
 /**
  * Millimeters conversions
  */
@@ -160,6 +180,10 @@ export function milesToMillimeters(miles) {
     return feetToMillimeters(milesToFeet(miles));
 }
 
+export function yardsToMillimeters(yards) {
+    return metersToMillimeters(yardsToMeters(yards));
+}
+
 /**
  * Miles conversions
  */
@@ -185,4 +209,39 @@ export function metersToMiles(meters) {
 
 export function millimetersToMiles(millimeters) {
     return kilometersToMiles(millimetersToKilometers(millimeters));
+}
+
+export function yardsToMiles(yards) {
+    return yards / 1760;
+}
+
+/**
+ * Yards conversions
+ */
+export function metersToYards(meters) {
+    return meters / 0.9144;
+}
+
+export function centimetersToYards(centimeters) {
+    return metersToYards(centimetersToMeters(centimeters));
+}
+
+export function feetToYards(feet) {
+    return feet / 3;
+}
+
+export function inchesToYards(inches) {
+    return inches / 36;
+}
+
+export function kilometersToYards(kilometers) {
+    return metersToYards(kilometersToMeters(kilometers));
+}
+
+export function millimetersToYards(millimeters) {
+    return metersToYards(millimetersToMeters(millimeters));
+}
+
+export function milesToYards(miles) {
+    return miles * 1760;
 }

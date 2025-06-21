@@ -30,6 +30,10 @@ test('Miles to Feet', () => {
     expect(startConversion('Miles', 'Feet', 0.5, true)).toBe(2640);
     expect(startConversion('Miles', 'Feet', 0, true)).toBe(0);
 });
+test('Yards to Feet', () => {
+    expect(startConversion('Yards', 'Feet', 5, true)).toBe(15);
+    expect(startConversion('Yards', 'Feet', 0, true)).toBe(0);
+});
 
 /**
  * Test inches conversions
@@ -57,6 +61,10 @@ test('Kilometers to Inches', () => {
 test('Miles to Inches', () => {
     expect(startConversion('Miles', 'Inches', 0.5, true)).toBe(31680);
     expect(startConversion('Miles', 'Inches', 0, true)).toBe(0);
+});
+test('Yards to Inches', () => {
+    expect(startConversion('Yards', 'Inches', 5, true)).toBe(180);
+    expect(startConversion('Yards', 'Inches', 0, true)).toBe(0);
 });
 
 /**
@@ -86,6 +94,10 @@ test('Miles to Centimeters', () => {
     expect(startConversion('Miles', 'Centimeters', 0.5, true)).toBe(80467.2);
     expect(startConversion('Miles', 'Centimeters', 0, true)).toBe(0);
 });
+test('Yards to Centimeters', () => {
+    expect(startConversion('Yards', 'Centimeters', 5, true)).toBe(457.2);
+    expect(startConversion('Yards', 'Centimeters', 0, true)).toBe(0);
+});
 
 /**
  * Test millimeters conversions
@@ -114,6 +126,11 @@ test('Miles to Millimeters', () => {
     expect(startConversion('Miles', 'Millimeters', 0.5, true)).toBe(804672);
     expect(startConversion('Miles', 'Millimeters', 0, true)).toBe(0);
 });
+test('Yards to Millimeters', () => {
+    expect(startConversion('Yards', 'Millimeters', 5, true)).toBe(4572);
+    expect(startConversion('Yards', 'Millimeters', 0, true)).toBe(0);
+});
+
 /**
  * Test kilometers conversions
  */
@@ -140,6 +157,10 @@ test('Millimeters to Kilometers', () => {
 test('Miles to Kilometers', () => {
     expect(startConversion('Miles', 'Kilometers', 0.5, true)).toBe(0.804672);
     expect(startConversion('Miles', 'Kilometers', 0, true)).toBe(0);
+});
+test('Yards to Kilometers', () => {
+    expect(startConversion('Yards', 'Kilometers', 500, true)).toBe(0.4572);
+    expect(startConversion('Yards', 'Kilometers', 0, true)).toBe(0);
 });
 
 /**
@@ -168,6 +189,42 @@ test('Millimeters to Miles', () => {
 test('Kilometers to Miles', () => {
     expect(startConversion('Kilometers', 'Miles', 4, true)).toBe(2.4854847689);
     expect(startConversion('Kilometers', 'Miles', 0, true)).toBe(0);
+});
+test('Yards to Miles', () => {
+    expect(startConversion('Yards', 'Miles', 5000, true)).toBe(2.8409090909);
+    expect(startConversion('Yards', 'Miles', 0, true)).toBe(0);
+});
+
+/**
+ * Test yards conversions
+ */
+test('Meters to Yards', () => {
+    expect(startConversion('Meters', 'Yards', 4, true)).toBe(4.3744531934);
+    expect(startConversion('Meters', 'Yards', 0, true)).toBe(0);
+});
+test('Feet to Yards', () => {
+    expect(startConversion('Feet', 'Yards', 17, true)).toBe(5.6666666667);
+    expect(startConversion('Feet', 'Yards', 0, true)).toBe(0);
+});
+test('Inches to Yards', () => {
+    expect(startConversion('Inches', 'Yards', 23, true)).toBe(0.6388888889);
+    expect(startConversion('Inches', 'Yards', 0, true)).toBe(0);
+});
+test('Centimeters to Yards', () => {
+    expect(startConversion('Centimeters', 'Yards', 5, true)).toBe(0.0546806649);
+    expect(startConversion('Centimeters', 'Yards', 0, true)).toBe(0);
+});
+test('Millimeters to Yards', () => {
+    expect(startConversion('Millimeters', 'Yards', 5000, true)).toBe(5.4680664917);
+    expect(startConversion('Millimeters', 'Yards', 0, true)).toBe(0);
+});
+test('Kilometers to Yards', () => {
+    expect(startConversion('Kilometers', 'Yards', 0.7, true)).toBe(765.5293088364);
+    expect(startConversion('Kilometers', 'Yards', 0, true)).toBe(0);
+});
+test('Miles to Yards', () => {
+    expect(startConversion('Miles', 'Yards', 0.5, true)).toBe(880);
+    expect(startConversion('Miles', 'Yards', 0, true)).toBe(0);
 });
 
 /**
