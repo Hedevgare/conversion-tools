@@ -20,6 +20,7 @@ function regexValidation(unit) {
         case "Meters":
         case "Millimeters":
         case "Miles":
+        case "Yards":
         case "Litres":
         case "Gallons":
         case "Kelvin":

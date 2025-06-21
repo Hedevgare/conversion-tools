@@ -36,7 +36,8 @@ export const conversions = {
         "Kilometers": lengthConversions.centimetersToKilometers,
         "Meters": lengthConversions.centimetersToMeters,
         "Miles": lengthConversions.centimetersToMiles,
-        "Millimeters": lengthConversions.centimetersToMillimeters
+        "Millimeters": lengthConversions.centimetersToMillimeters,
+        "Yards": lengthConversions.centimetersToYards
     },
     "Feet": {
         "Centimeters": lengthConversions.feetToCentimeters,
@@ -44,7 +45,8 @@ export const conversions = {
         "Kilometers": lengthConversions.feetToKilometers,
         "Meters": lengthConversions.feetToMeters,
         "Miles": lengthConversions.feetToMiles,
-        "Millimeters": lengthConversions.feetToMillimeters
+        "Millimeters": lengthConversions.feetToMillimeters,
+        "Yards": lengthConversions.feetToYards
     },
     "Inches": {
         "Centimeters": lengthConversions.inchesToCentimeters,
@@ -52,7 +54,8 @@ export const conversions = {
         "Kilometers": lengthConversions.inchesToKilometers,
         "Meters": lengthConversions.inchesToMeters,
         "Miles": lengthConversions.inchesToMiles,
-        "Millimeters": lengthConversions.inchesToMillimeters
+        "Millimeters": lengthConversions.inchesToMillimeters,
+        "Yards": lengthConversions.inchesToYards
     },
     "Kilometers": {
         "Centimeters": lengthConversions.kilometersToCentimeters,
@@ -60,7 +63,8 @@ export const conversions = {
         "Inches": lengthConversions.kilometersToInches,
         "Meters": lengthConversions.kilometersToMeters,
         "Miles": lengthConversions.kilometersToMiles,
-        "Millimeters": lengthConversions.kilometersToMillimeters
+        "Millimeters": lengthConversions.kilometersToMillimeters,
+        "Yards": lengthConversions.kilometersToYards
     },
     "Meters": {
         "Centimeters": lengthConversions.metersToCentimeters,
@@ -68,7 +72,8 @@ export const conversions = {
         "Inches": lengthConversions.metersToInches,
         "Kilometers": lengthConversions.metersToKilometers,
         "Miles": lengthConversions.metersToMiles,
-        "Millimeters": lengthConversions.metersToMillimeters
+        "Millimeters": lengthConversions.metersToMillimeters,
+        "Yards": lengthConversions.metersToYards
     },
     "Millimeters": {
         "Centimeters": lengthConversions.millimetersToCentimeters,
@@ -76,7 +81,8 @@ export const conversions = {
         "Inches": lengthConversions.millimetersToInches,
         "Kilometers": lengthConversions.millimetersToKilometers,
         "Meters": lengthConversions.millimetersToMeters,
-        "Miles": lengthConversions.millimetersToMiles
+        "Miles": lengthConversions.millimetersToMiles,
+        "Yards": lengthConversions.millimetersToYards
     },
     "Miles": {
         "Centimeters": lengthConversions.milesToCentimeters,
@@ -84,7 +90,17 @@ export const conversions = {
         "Inches": lengthConversions.milesToInches,
         "Kilometers": lengthConversions.milesToKilometers,
         "Meters": lengthConversions.milesToMeters,
-        "Millimeters": lengthConversions.milesToMillimeters
+        "Millimeters": lengthConversions.milesToMillimeters,
+        "Yards": lengthConversions.milesToYards
+    },
+    "Yards": {
+        "Centimeters": lengthConversions.yardsToCentimeters,
+        "Feet": lengthConversions.yardsToFeet,
+        "Inches": lengthConversions.yardsToInches,
+        "Kilometers": lengthConversions.yardsToKilometers,
+        "Meters": lengthConversions.yardsToMeters,
+        "Millimeters": lengthConversions.yardsToMillimeters,
+        "Miles": lengthConversions.yardsToMiles
     },
     // Temperature Conversions
     "Celsius": {

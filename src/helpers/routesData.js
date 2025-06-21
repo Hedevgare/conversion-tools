@@ -21,6 +21,7 @@ export default {
 			{ unit: 'Feet', symbol: 'ft' },
 			{ unit: 'Inches', symbol: 'in' },
             { unit: 'Miles', symbol: 'mi' },
+            { unit: 'Yards', symbol: 'yd' }
 		],
         startFromUnit: { unit: 'Meters', symbol: 'm' },
         startToUnit: { unit: 'Feet', symbol: 'ft' },
