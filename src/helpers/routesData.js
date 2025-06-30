@@ -54,6 +54,7 @@ export default {
         name: 'Weight',
         units: [
 			{ unit: 'Grams', symbol: 'g' },
+            { unit: 'Kilograms', symbol: 'kg' },
 			{ unit: 'Pounds', symbol: 'lb' },
 		],
         startFromUnit: { unit: 'Grams', symbol: 'g' },

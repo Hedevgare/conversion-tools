@@ -133,9 +133,15 @@ export const conversions = {
     // Weight Conversions
     "Grams": {
         "Pounds": weightConversions.gramsToPounds,
+        "Kilograms": weightConversions.gramsToKilograms,
+    },
+    "Kilograms": {
+        "Grams": weightConversions.kilogramsToGrams,
+        "Pounds": weightConversions.kilogramsToPounds,
     },
     "Pounds": {
         "Grams": weightConversions.poundsToGrams,
+        "Kilograms": weightConversions.poundsToKilograms,
     },
     // Time Conversions
     "Seconds": {

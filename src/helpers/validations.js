@@ -26,6 +26,7 @@ function regexValidation(unit) {
         case "Kelvin":
         case "Rankine":
         case "Grams":
+        case "Kilograms":
         case "Pounds":
         case "Seconds":
         case "Minutes":

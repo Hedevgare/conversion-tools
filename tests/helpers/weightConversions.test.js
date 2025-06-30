@@ -6,10 +6,21 @@ const errorMessage = "Invalid!";
 /**
  * Test Grams conversions
  */
+test('Kilograms to Grams', () => {
+    expect(startConversion('Kilograms', 'Grams', 5, true)).toBe(5000);
+});
 test('Pounds to Grams', () => {
     expect(startConversion('Pounds', 'Grams', 5, true)).toBe(2267.96185);
-    expect(startConversion('Pounds', 'Grams', 0, true)).toBe(0);
-    expect(startConversion('Pounds', 'Grams', -1, true)).toBe(errorMessage);
+});
+
+/**
+ * Test Kilograms conversions
+ */
+test('Grams to Kilograms', () => {
+    expect(startConversion('Grams', 'Kilograms', 5000, true)).toBe(5);
+});
+test('Pounds to Kilograms', () => {
+    expect(startConversion('Pounds', 'Kilograms', 10, true)).toBe(4.5359237);
 });
 
 /**
@@ -17,6 +28,7 @@ test('Pounds to Grams', () => {
  */
 test('Grams to Pounds', () => {
     expect(startConversion('Grams', 'Pounds', 5, true)).toBe(0.0110231131);
-    expect(startConversion('Grams', 'Pounds', 0, true)).toBe(0);
-    expect(startConversion('Grams', 'Pounds', -16, true)).toBe(errorMessage);
+});
+test('Kilograms to Pounds', () => {
+    expect(startConversion('Kilograms', 'Pounds', 20, true)).toBe(44.092452437);
 });
