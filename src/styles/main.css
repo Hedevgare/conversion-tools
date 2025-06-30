@@ -117,7 +117,7 @@ input:focus {
     top: 55px;
     bottom: 0;
     background-color: #2e2e3a;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .menu.open {
