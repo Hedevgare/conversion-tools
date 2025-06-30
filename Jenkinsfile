@@ -9,13 +9,7 @@ pipeline {
         WSL_NODE_PATH = "/root/.nvm/versions/node/v22.5.1/bin"
     }
     
-    stages {
-        stage("Checkout") {
-            steps {
-                git url: 'https://github.com/Hedevgare/conversion-tools.git', branch: 'main'
-            }
-        }
-        
+    stages {        
         stage("Install Dependencies") {
             steps {
                 bat """
