@@ -2,11 +2,10 @@ pipeline {
     agent any
     
     environment {
-        REMOTE_USER = "moglico"
-        REMOTE_HOST = "159.223.235.105"
+        REMOTE_USER = credentials('VPS-Username')
+        REMOTE_HOST = credentials('VPS-IP')
         REMOTE_PATH = "/var/www/html/conversion-tools"
         SSH_CRED_ID = "VPS-Key"
-        WSL_NODE_PATH = "/root/.nvm/versions/node/v22.5.1/bin"
     }
     
     stages {        
