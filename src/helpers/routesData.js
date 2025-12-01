@@ -83,4 +83,14 @@ export default {
         startToUnit: { unit: 'Ares', symbol: 'a' },
         shouldRound: true
     },
+    velocity: {
+        name: 'Velocity',
+        units: [
+            { unit: 'Kilometers per Hour', symbol: 'km/h' },
+            { unit: 'Miles per Hour', symbol: 'mi/h' },
+        ],
+        startFromUnit: { unit: 'Kilometers per Hour', symbol: 'km/h' },
+        startToUnit: { unit: 'Miles per Hour', symbol: 'mi/h' },
+        shouldRound: true
+    }
 }

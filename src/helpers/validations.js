@@ -34,6 +34,8 @@ function regexValidation(unit) {
         case "Days":
         case "Square Meters":
         case "Ares":
+        case "Kilometers per Hour":
+        case "Miles per Hour":
             regex = new RegExp("^[0-9.0-9]+$", "g");
             break;
         case "Celsius":

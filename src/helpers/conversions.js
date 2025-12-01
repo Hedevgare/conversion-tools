@@ -5,6 +5,7 @@ import * as volumeConversions from "./volumeConversions";
 import * as weightConversions from "./weightConversions";
 import * as timeConversions from "./timeConversions";
 import * as areaConversions from "./areaConversions";
+import * as velocityConversions from "./velocityConversions";
 import { validateUnit } from "./validations";
 
 export const conversions = {
@@ -170,7 +171,14 @@ export const conversions = {
     },
     "Ares": {
         "Square Meters": areaConversions.areToSquareMeters,
-    }
+    },
+    // Velocity Conversions
+    "Kilometers per Hour": {
+        "Miles per Hour": velocityConversions.kilometersPerHourToMilesPerHour,
+    },
+    "Miles per Hour": {
+        "Kilometers per Hour": velocityConversions.milesPerHourToKilometersPerHour,
+    },
 }
 
 export function startConversion(fromUnit, toUnit, value, shouldRound = false) {

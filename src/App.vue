@@ -72,6 +72,12 @@ export default {
                     Areas
                 </RouterLink>
             </div>
+            <div class="menu-item">
+                <RouterLink class="header-link" to="/velocity" @click="toggleMenu">
+                    <font-awesome-icon :icon="['fa', 'tachometer-alt']" />
+                    Velocities
+                </RouterLink>
+            </div>
         </div>
     </section>
     <section class="body" :class="{ 'open': isMenuOpen }">
