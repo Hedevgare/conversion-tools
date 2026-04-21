@@ -55,19 +55,28 @@ input:focus {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #2e2e3a;
+    /* background-color: #2e2e3a; */
     color: #ffffff;
     margin: 0;
     padding: 0;
 }
 
 /* Classes */
+/* Colors */
+.dark-mode {
+    background-color: #2e2e3a;
+    color: #a0d2db;
+}
+.light-mode {
+    background-color: #ffffff;
+    color: #2e2e3a;
+}
 /* Header and Menu */
 .header {
     position: fixed;
     width: 100%;
     height: 55px;
-    background-color: #2e2e3a;
+    /* background-color: #2e2e3a; */
 }
 
 .header-link {
@@ -138,7 +147,7 @@ input:focus {
     width: 100%;
     top: 55px;
     bottom: 0;
-    background-color: #2e2e3a;
+    /* background-color: #2e2e3a; */
     overflow-y: auto;
 }
 
@@ -173,9 +182,13 @@ input:focus {
 /* Main content */
 .body {
     text-align: center;
-    margin: auto;
-    padding-top: 55px; /* Adjust for fixed header */;
-    padding-bottom: 50px; /* Space for footer */
+    height: calc(100vh - 52px); /* Adjust to accomodate the footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin: auto;
+    padding-top: 55px; */ /* Adjust for fixed header */;
+    /* padding-bottom: 50px; */ /* Space for footer */
 }
 
 .body.open {

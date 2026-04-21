@@ -4,7 +4,14 @@ export default {
         return {
             appVersion: 'v0.8.0',
             isMenuOpen: false,
+            darkmode: localStorage.darkmode === 'true'
         }
+    },
+    mounted() {
+        // Listen for dark mode toggle events from Definitions.vue
+        window.addEventListener('darkmode-toggle', (event) => {
+            this.darkmode = event.detail;
+        });
     },
     computed: {
         footer() {
@@ -23,23 +30,23 @@ export default {
 </script>
 
 <template>
-    <div class="header">
+    <div class="header" :class="{ 'dark-mode': darkmode, 'light-mode': !darkmode }">
         <div class="header-icons">
             <div class="hamburger-button" :class="{ 'open': isMenuOpen }" @click="toggleMenu">
                 <div class="bar-1"></div>
                 <div class="bar-2"></div>
                 <div class="bar-3"></div>
             </div>
-            <div class="header-title">
+            <!-- <div class="header-title">
                 <p>Conversion Tools</p>
-            </div>
+            </div> -->
             <div class="definitions-button" @click="openDefinitions">
                 <font-awesome-icon :icon="['fa', 'cog']" />
             </div>
         </div>
         <hr />
     </div>
-    <section class="menu" :class="{ 'open': isMenuOpen }">
+    <section class="menu" :class="{ 'open': isMenuOpen, 'dark-mode': darkmode, 'light-mode': !darkmode }">
         <div class="menu-container">
             <div class="menu-item">
                 <RouterLink class="header-link" to="/" @click="toggleMenu">
@@ -91,10 +98,10 @@ export default {
             </div>
         </div>
     </section>
-    <section class="body" :class="{ 'open': isMenuOpen }">
+    <section class="body" :class="{ 'open': isMenuOpen, 'dark-mode': darkmode, 'light-mode': !darkmode }">
         <RouterView />
     </section>
-    <div class="footer">
+    <div class="footer" :class="{ 'dark-mode': darkmode, 'light-mode': !darkmode }">
         <p>
             <a href="https://hedegaremoreira.com" target="_blank">Hedegare</a> {{ footer }} - 
             <a href="https://coff.ee/hedegare" target="_blank" rel="noopener" title="Buy me a coffee">
