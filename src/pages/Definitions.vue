@@ -2,7 +2,12 @@
 export default {
     data() {
         return {
-            precision: 2
+            precision: localStorage.precision || 10,
+        }
+    },
+    watch: {
+        precision(newValue) {
+            localStorage.precision = newValue;
         }
     }
 }

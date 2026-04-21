@@ -185,8 +185,9 @@ export function startConversion(fromUnit, toUnit, value, shouldRound = false) {
     if (validateUnit(fromUnit, value)) {
         if (!conversions[fromUnit][toUnit]) return;
         let conversion = conversions[fromUnit][toUnit](value);
+        let precision = localStorage.precision || 10;
         if (shouldRound) {
-            return Number(conversion.toFixed(10));
+            return Number(conversion.toFixed(precision));
         } else {
             return conversion;
         }
