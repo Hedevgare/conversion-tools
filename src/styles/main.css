@@ -337,7 +337,7 @@ input:focus {
     cursor: pointer;
 }
 
-/* Margins & Paddings */
+/* Margins, Paddings & Other helper classes */
 .margin-auto {
     margin: auto;
 }
@@ -368,6 +368,14 @@ input:focus {
 
 .padding-right-15 {
     padding-right: 15px;
+}
+
+.padding-right-50 {
+    padding-right: 50px;
+}
+
+.text-right {
+    text-align: right;
 }
 
 /* Media Queries */
