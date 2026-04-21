@@ -2,7 +2,7 @@
 export default {
     data() {
         return {
-            appVersion: 'v0.7.3',
+            appVersion: 'v0.8.0',
             isMenuOpen: false,
         }
     },
@@ -14,6 +14,9 @@ export default {
     methods: {
         toggleMenu() {
             this.isMenuOpen = !this.isMenuOpen;
+        },
+        openDefinitions() {
+            this.$router.push('/definitions');
         }
     }
 }
@@ -21,10 +24,18 @@ export default {
 
 <template>
     <div class="header">
-        <div class="hamburger-button" :class="{ 'open': isMenuOpen }" @click="toggleMenu">
-            <div class="bar-1"></div>
-            <div class="bar-2"></div>
-            <div class="bar-3"></div>
+        <div class="header-icons">
+            <div class="hamburger-button" :class="{ 'open': isMenuOpen }" @click="toggleMenu">
+                <div class="bar-1"></div>
+                <div class="bar-2"></div>
+                <div class="bar-3"></div>
+            </div>
+            <div class="header-title">
+                <p>Conversion Tools</p>
+            </div>
+            <div class="definitions-button" @click="openDefinitions">
+                <font-awesome-icon :icon="['fa', 'cog']" />
+            </div>
         </div>
         <hr />
     </div>

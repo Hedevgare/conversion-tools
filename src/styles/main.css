@@ -81,6 +81,28 @@ input:focus {
     cursor: pointer;
 }
 
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons > * {
+    flex: 1;
+}
+
+.header-title {
+    text-align: center;
+    font-size: 20px;
+}
+
+.definitions-button {
+    text-align: right;
+    margin: 15px 30px;
+    color: #a0d2db;
+    cursor: pointer;
+    font-size: 20px;
+}
+
 .hamburger-button {
     margin: 15px 30px;
     cursor: pointer;
@@ -290,6 +312,13 @@ input:focus {
     border-top-right-radius: 5px;
 }
 
+.input-definitions {
+    border-bottom: 1px solid #a0d2db;
+    font-size: 20px;
+    text-align: center;
+    padding: 15px 0;
+}
+
 .input-symbol-container {
     width: 50px;
     background-color: #2e2e3a;
@@ -337,6 +366,9 @@ input:focus {
     padding-left: 15px;
 }
 
+.padding-right-15 {
+    padding-right: 15px;
+}
 
 /* Media Queries */
 @media screen and (min-width: 900px) {
