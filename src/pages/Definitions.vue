@@ -20,14 +20,14 @@ export default {
 </script>
 
 <template>
-    <h1 class="title">Configurations</h1>
-    <p class="margin-bottom-50">Configure your application settings below.</p>
+    <h1 :class="{ 'dark-mode-text': darkmode, 'light-mode-text': !darkmode }">Configurations</h1>
+    <p class="margin-bottom-50" :class="{ 'dark-mode-text-secondary': darkmode, 'light-mode-text': !darkmode }">Configure your application settings below.</p>
     <div class="flex flex-center margin-10">
-        <p class="padding-right-50 text-right">Precision</p>
-        <input class="input-definitions" type="number" v-model="precision" />
+        <p class="padding-right-50 text-right" :class="{ 'dark-mode-text-secondary': darkmode, 'light-mode-text': !darkmode }">Precision</p>
+        <input class="input-definitions" :class="{ 'dark-mode': darkmode, 'light-mode': !darkmode, 'dark-mode-text-secondary': darkmode, 'light-mode-text': !darkmode }" type="number" v-model="precision" />
     </div>
     <div class="flex flex-center margin-10">
-        <p class="padding-right-50 text-right">Toggle dark mode (WIP)</p>
+        <p class="padding-right-50 text-right" :class="{ 'dark-mode-text-secondary': darkmode, 'light-mode-text': !darkmode }">Toggle dark mode (WIP)</p>
         <input type="checkbox" v-model="darkmode" />
     </div>
 </template>

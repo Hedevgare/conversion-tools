@@ -18,7 +18,8 @@ export default {
             fromValue: "",
             toValue: "",
             showNotification: false,
-            timeoutId: null
+            timeoutId: null,
+            darkmode: localStorage.darkmode === 'true'
         };
     },
     watch: {
@@ -30,6 +31,11 @@ export default {
             this.to = this.$props.startTo;
             this.validateInput();
         }
+    },
+    mounted() {
+        window.addEventListener('darkmode-toggle', (event) => {
+            this.darkmode = event.detail;
+        });
     },
     methods: {
         validateInput() {
@@ -71,7 +77,7 @@ export default {
 </script>
 
 <template>
-    <p class="margin-bottom-50">Enter a value below and it will be converted from {{ this.from.unit }} to {{ this.to.unit }}</p>
+    <p class="margin-bottom-50" :class="{ 'dark-mode-text-secondary': this.darkmode, 'light-mode-text': !this.darkmode }">Enter a value below and it will be converted from {{ this.from.unit }} to {{ this.to.unit }}</p>
     <div class="flex flex-center conversion-container">
         <div class="flex flex-center conversion-block">
             <icon-input v-model="fromValue" name="fromValue" @input="validateInput" :shorter="this.from.symbol" />

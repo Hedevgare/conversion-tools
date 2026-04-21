@@ -1,12 +1,23 @@
 <script>
 export default {
     props: ['data', 'type'],
+    data() {
+        return {
+            darkmode: localStorage.darkmode === 'true'
+        }
+    },
+    mounted() {
+        window.addEventListener('darkmode-toggle', (event) => {
+            this.darkmode = event.detail;
+        });
+    },
     computed: {
         notificationType() {
             return {
                 'notification-container': true,
                 'notification-error': this.$props.type === 'error',
-                'notification-success': this.$props.type === 'success'
+                'notification-success-dark-mode': this.$props.type === 'success' && this.darkmode,
+                'notification-success-light-mode': this.$props.type === 'success' && !this.darkmode
             }
         }
     }
@@ -51,8 +62,13 @@ export default {
     background-color: #f8d7da;
     color: #721c24;
 }
-.notification-success {
+.notification-success-dark-mode {
     background-color: #a0d2db;
     color: #2e2e3a;
+}
+.notification-success-light-mode {
+    background-color: #fffbf1;
+    color: #2e2e3a;
+    border: 1px solid #2e2e3a;
 }
 </style>

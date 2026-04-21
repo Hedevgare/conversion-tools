@@ -11,12 +11,11 @@ body {
 
 a {
     text-decoration: none;
-    color: #a0d2db;
 }
 
 hr {
     margin: 0 30px;
-    border-color: #a0d2db;
+    border: 1px solid;
 }
 
 h1 {
@@ -50,12 +49,10 @@ input:focus {
 }
 
 /* IDs */
-
 #app {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* background-color: #2e2e3a; */
     color: #ffffff;
     margin: 0;
     padding: 0;
@@ -67,22 +64,35 @@ input:focus {
     background-color: #2e2e3a;
     color: #a0d2db;
 }
+.dark-mode-text {
+    color: #a0d2db;
+}
+.dark-mode-text-secondary {
+    color: #ffffff;
+}
+.dark-mode-menu {
+    background-color: #a0d2db;
+}
 .light-mode {
-    background-color: #ffffff;
+    background-color: #fffbf1;
     color: #2e2e3a;
+}
+.light-mode-text {
+    color: #2e2e3a;
+}
+.light-mode-menu {
+    background-color: #2e2e3a;
 }
 /* Header and Menu */
 .header {
     position: fixed;
     width: 100%;
     height: 55px;
-    /* background-color: #2e2e3a; */
 }
 
 .header-link {
     margin: 15px 30px;
     text-decoration: none;
-    color: #a0d2db;
     font-size: 14px;
 }
 
@@ -107,7 +117,6 @@ input:focus {
 .definitions-button {
     text-align: right;
     margin: 15px 30px;
-    color: #a0d2db;
     cursor: pointer;
     font-size: 20px;
 }
@@ -122,7 +131,6 @@ input:focus {
 .bar-3 {
     width: 35px;
     height: 3px;
-    background-color: #a0d2db;
     margin: 6px 0;
     transition: 0.4s;
 }
@@ -147,7 +155,6 @@ input:focus {
     width: 100%;
     top: 55px;
     bottom: 0;
-    /* background-color: #2e2e3a; */
     overflow-y: auto;
 }
 
@@ -168,7 +175,7 @@ input:focus {
     align-items: center;
     text-align: center;
     padding: 30px;
-    border: 1px solid #a0d2db;
+    border: 1px solid;
     border-radius: 20px;
     margin: 15px;
     height: 50px;
@@ -186,9 +193,6 @@ input:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* margin: auto;
-    padding-top: 55px; */ /* Adjust for fixed header */;
-    /* padding-bottom: 50px; */ /* Space for footer */
 }
 
 .body.open {
@@ -197,7 +201,6 @@ input:focus {
 
 .footer {
     text-align: center;
-    color: #a0d2db;
 }
 
 .footer-tipjar-text {
@@ -248,10 +251,6 @@ input:focus {
     rotate: 90deg;
 }
 
-.title {
-    color: #a0d2db;
-}
-
 .underline-text {
     text-decoration: underline;
 }
@@ -264,9 +263,7 @@ input:focus {
 .dropdown-container {
     position: relative;
     width: 100%;
-    background-color: #2e2e3a;
-    color: #ffffff;
-    border: 1px solid #a0d2db;
+    border: 1px solid;
     border-top-style: dashed;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -278,7 +275,7 @@ input:focus {
 }
 
 .dropdown {
-    border: 1px solid #a0d2db;
+    border: 1px solid;
     border-top: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -286,7 +283,6 @@ input:focus {
     margin-left: -1px;
     position: absolute;
     width: 100%;
-    background-color: #2e2e3a;
     min-width: fit-content;
     font-size: 16px;
     z-index: 1;
@@ -302,7 +298,7 @@ input:focus {
 }
 
 .dropdown-arrow {
-    border: solid #ffffff;
+    border: solid;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
@@ -311,7 +307,6 @@ input:focus {
 }
 
 .active-dropdown {
-    color: #a0d2db;
     text-decoration: underline;
 }
 
@@ -319,14 +314,14 @@ input:focus {
     display: flex;
     flex-direction: row;
     align-items: center;
-    outline: 1px solid #a0d2db;
+    outline: 1px solid;
     border-bottom: none;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
 .input-definitions {
-    border-bottom: 1px solid #a0d2db;
+    border-bottom: 1px solid;
     font-size: 20px;
     text-align: center;
     padding: 15px 0;
@@ -334,7 +329,6 @@ input:focus {
 
 .input-symbol-container {
     width: 50px;
-    background-color: #2e2e3a;
     padding: 20px 0;
     text-align: center;
 }
@@ -342,8 +336,7 @@ input:focus {
 .input-symbol {
     margin: 0;
     line-height: 50px;
-    border-left: 1px dashed #a0d2db;
-    color: #a0d2db;
+    border-left: 1px dashed;
 }
 
 .cursor-pointer {
