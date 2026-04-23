@@ -22,12 +22,14 @@ export default {
 <template>
     <h1 class="title">Configurations</h1>
     <p class="margin-bottom-50">Configure your application settings below.</p>
-    <div class="flex flex-center margin-10">
-        <p class="padding-right-50">Precision</p>
-        <input class="input-definitions" type="number" v-model="precision" />
-    </div>
-    <div class="flex flex-center margin-10">
-        <p class="padding-right-50">Toggle dark mode (WIP)</p>
-        <input type="checkbox" v-model="darkmode" />
+    <div class="configurations-container">
+        <div class="configurations-item margin-10">
+            <p class="flex-1 text-right">Precision</p>
+            <input class="flex-1 input-definitions" type="number" v-model="precision" />
+        </div>
+        <div class="configurations-item margin-10">
+            <p class="flex-1 text-right">Toggle light and dark mode</p>
+            <input class="flex-1" type="checkbox" v-model="darkmode" />
+        </div>
     </div>
 </template>

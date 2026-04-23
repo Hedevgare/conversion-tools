@@ -237,6 +237,19 @@ input:focus {
     color: var(--text);
 }
 
+.configurations-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.configurations-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .conversion-container {
     flex-direction: column;
 }
@@ -403,6 +416,15 @@ input:focus {
     .conversion-icons {
         flex-direction: column;
         margin: 0 40px;
+    }
+
+    .configurations-item {
+        width: 600px;
+        flex-direction: row;
+    }
+
+    .configurations-item > p {
+        padding-right: 50px;
     }
 }
 
