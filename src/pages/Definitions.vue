@@ -3,7 +3,7 @@ export default {
     data() {
         return {
             precision: localStorage.precision || 10,
-            darkmode: localStorage.darkmode === 'true'
+            darkmode: localStorage.darkmode === 'true' || true
         }
     },
     watch: {
@@ -28,7 +28,7 @@ export default {
             <input class="flex-1 input-definitions" type="number" v-model="precision" />
         </div>
         <div class="configurations-item margin-10">
-            <p class="flex-1 text-right">Toggle light and dark mode</p>
+            <p class="flex-1 text-right">Toggle dark mode</p>
             <input class="flex-1" type="checkbox" v-model="darkmode" />
         </div>
     </div>
