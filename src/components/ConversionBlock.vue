@@ -19,7 +19,6 @@ export default {
             toValue: "",
             showNotification: false,
             timeoutId: null,
-            darkmode: localStorage.darkmode === 'true'
         };
     },
     watch: {
@@ -31,11 +30,6 @@ export default {
             this.to = this.$props.startTo;
             this.validateInput();
         }
-    },
-    mounted() {
-        window.addEventListener('darkmode-toggle', (event) => {
-            this.darkmode = event.detail;
-        });
     },
     methods: {
         validateInput() {
@@ -77,7 +71,7 @@ export default {
 </script>
 
 <template>
-    <p class="margin-bottom-50" :class="{ 'dark-mode-text-secondary': this.darkmode, 'light-mode-text': !this.darkmode }">Enter a value below and it will be converted from {{ this.from.unit }} to {{ this.to.unit }}</p>
+    <p class="margin-bottom-50">Enter a value below and it will be converted from {{ this.from.unit }} to {{ this.to.unit }}</p>
     <div class="flex flex-center conversion-container">
         <div class="flex flex-center conversion-block">
             <icon-input v-model="fromValue" name="fromValue" @input="validateInput" :shorter="this.from.symbol" />
@@ -93,6 +87,6 @@ export default {
             <dropdown ref="dropdownTo" :active="this.to" :units="this.units"
                 @set-unit="(unit) => setUnit('to', unit)" />
         </div>
-        <notification v-if="showNotification" @close="closeNotification" data="Copied to the clipboard!" type="success" />
+        <notification v-if="showNotification" @close="closeNotification" data="Copied to the clipboard!" type="error" />
     </div>
 </template>

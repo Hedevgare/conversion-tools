@@ -29,12 +29,12 @@ export default {
 </script>
 
 <template>
-    <div class="header" :class="{ 'dark-mode': darkmode, 'light-mode': !darkmode }">
+    <div class="header" :class="{ 'dark': darkmode }">
         <div class="header-icons">
             <div class="hamburger-button" :class="{ 'open': isMenuOpen }" @click="toggleMenu">
-                <div class="bar-1" :class="{ 'dark-mode-menu': darkmode, 'light-mode-menu': !darkmode }"></div>
-                <div class="bar-2" :class="{ 'dark-mode-menu': darkmode, 'light-mode-menu': !darkmode }"></div>
-                <div class="bar-3" :class="{ 'dark-mode-menu': darkmode, 'light-mode-menu': !darkmode }"></div>
+                <div class="bar-1"></div>
+                <div class="bar-2"></div>
+                <div class="bar-3"></div>
             </div>
             <!-- <div class="header-title">
                 <p>Conversion Tools</p>
@@ -43,67 +43,67 @@ export default {
                 <font-awesome-icon :icon="['fa', 'cog']" />
             </div>
         </div>
-        <hr :class="{ 'dark-mode': darkmode, 'light-mode': !darkmode }" />
+        <hr />
     </div>
-    <section class="menu" :class="{ 'open': isMenuOpen, 'dark-mode': darkmode, 'light-mode': !darkmode }">
+    <section class="menu" :class="{ 'open': isMenuOpen, 'dark': darkmode }">
         <div class="menu-container">
             <div class="menu-item">
-                <RouterLink class="header-link" :class="{ 'dark-mode-text': darkmode, 'light-mode-text': !darkmode }" to="/" @click="toggleMenu">
+                <RouterLink class="header-link" to="/" @click="toggleMenu">
                     <font-awesome-icon :icon="['fa', 'hashtag']" />
                     Numbers
                 </RouterLink>
             </div>
             <div class="menu-item">
-                <RouterLink class="header-link" :class="{ 'dark-mode-text': darkmode, 'light-mode-text': !darkmode }" to="/length" @click="toggleMenu">
+                <RouterLink class="header-link" to="/length" @click="toggleMenu">
                     <font-awesome-icon :icon="['fa', 'ruler']" />
                     Lengths
                 </RouterLink>
             </div>
             <div class="menu-item">
-                <RouterLink class="header-link" :class="{ 'dark-mode-text': darkmode, 'light-mode-text': !darkmode }" to="/temperature" @click="toggleMenu">
+                <RouterLink class="header-link" to="/temperature" @click="toggleMenu">
                     <font-awesome-icon :icon="['fa', 'temperature-half']" />
                     Temperatures
                 </RouterLink>
             </div>
             <div class="menu-item">
-                <RouterLink class="header-link" :class="{ 'dark-mode-text': darkmode, 'light-mode-text': !darkmode }" to="/volume" @click="toggleMenu">
+                <RouterLink class="header-link" to="/volume" @click="toggleMenu">
                     <font-awesome-icon :icon="['fa', 'flask']" />
                     Volumes
                 </RouterLink>
             </div>
             <div class="menu-item">
-                <RouterLink class="header-link" :class="{ 'dark-mode-text': darkmode, 'light-mode-text': !darkmode }" to="/weight" @click="toggleMenu">
+                <RouterLink class="header-link" to="/weight" @click="toggleMenu">
                     <font-awesome-icon :icon="['fa', 'weight-hanging']" />
                     Weights
                 </RouterLink>
             </div>
             <div class="menu-item">
-                <RouterLink class="header-link" :class="{ 'dark-mode-text': darkmode, 'light-mode-text': !darkmode }" to="/time" @click="toggleMenu">
+                <RouterLink class="header-link" to="/time" @click="toggleMenu">
                     <font-awesome-icon :icon="['fa', 'hourglass']" />
                     Times
                 </RouterLink>
             </div>
             <div class="menu-item">
-                <RouterLink class="header-link" :class="{ 'dark-mode-text': darkmode, 'light-mode-text': !darkmode }" to="/area" @click="toggleMenu">
+                <RouterLink class="header-link" to="/area" @click="toggleMenu">
                     <font-awesome-icon :icon="['fa', 'arrows-left-right-to-line']" />
                     Areas
                 </RouterLink>
             </div>
             <div class="menu-item">
-                <RouterLink class="header-link" :class="{ 'dark-mode-text': darkmode, 'light-mode-text': !darkmode }" to="/velocity" @click="toggleMenu">
+                <RouterLink class="header-link" to="/velocity" @click="toggleMenu">
                     <font-awesome-icon :icon="['fa', 'tachometer-alt']" />
                     Velocities
                 </RouterLink>
             </div>
         </div>
     </section>
-    <section class="body" :class="{ 'open': isMenuOpen, 'dark-mode': darkmode, 'light-mode': !darkmode }">
+    <section class="body" :class="{ 'open': isMenuOpen, 'dark': darkmode }">
         <RouterView />
     </section>
-    <div class="footer" :class="{ 'dark-mode': darkmode, 'light-mode': !darkmode, 'dark-mode-text': darkmode, 'light-mode-text': !darkmode }">
+    <div class="footer" :class="{ 'dark': darkmode }">
         <p>
-            <a :class="{ 'dark-mode-text': darkmode, 'light-mode-text': !darkmode }" href="https://hedegaremoreira.com" target="_blank">Hedegare</a> {{ footer }} - 
-            <a :class="{ 'dark-mode-text': darkmode, 'light-mode-text': !darkmode }" href="https://coff.ee/hedegare" target="_blank" rel="noopener" title="Buy me a coffee">
+            <a href="https://hedegaremoreira.com" target="_blank">Hedegare</a> {{ footer }} - 
+            <a href="https://coff.ee/hedegare" target="_blank" rel="noopener" title="Buy me a coffee">
                 <font-awesome-icon :icon="['fa', 'coffee']" />
                 <span class="footer-tipjar-text">Buy me a coffee</span>
             </a>

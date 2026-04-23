@@ -1,23 +1,12 @@
 <script>
 export default {
     props: ['data', 'type'],
-    data() {
-        return {
-            darkmode: localStorage.darkmode === 'true'
-        }
-    },
-    mounted() {
-        window.addEventListener('darkmode-toggle', (event) => {
-            this.darkmode = event.detail;
-        });
-    },
     computed: {
         notificationType() {
             return {
                 'notification-container': true,
                 'notification-error': this.$props.type === 'error',
-                'notification-success-dark-mode': this.$props.type === 'success' && this.darkmode,
-                'notification-success-light-mode': this.$props.type === 'success' && !this.darkmode
+                'notification-success': this.$props.type === 'success'
             }
         }
     }
@@ -43,12 +32,14 @@ export default {
     justify-content: center;
     align-items: center;
     padding: 10px;
+    border: 1px solid #2e2e3a;
     border-radius: 5px;
     margin: 10px 0;
     width: 255px;
 }
 .notification-text {
     margin: 0;
+    color: #2e2e3a;
 }
 .notification-close {
     display: flex;
@@ -60,15 +51,8 @@ export default {
 }
 .notification-error {
     background-color: #f8d7da;
-    color: #721c24;
 }
-.notification-success-dark-mode {
+.notification-success {
     background-color: #a0d2db;
-    color: #2e2e3a;
-}
-.notification-success-light-mode {
-    background-color: #fffbf1;
-    color: #2e2e3a;
-    border: 1px solid #2e2e3a;
 }
 </style>
