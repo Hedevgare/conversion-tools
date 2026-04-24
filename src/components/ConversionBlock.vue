@@ -87,6 +87,6 @@ export default {
             <dropdown ref="dropdownTo" :active="this.to" :units="this.units"
                 @set-unit="(unit) => setUnit('to', unit)" />
         </div>
-        <notification v-if="showNotification" @close="closeNotification" data="Copied to the clipboard!" type="error" />
+        <notification v-if="showNotification" @close="closeNotification" data="Copied to the clipboard!" type="success" />
     </div>
 </template>

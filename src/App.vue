@@ -2,9 +2,9 @@
 export default {
     data() {
         return {
-            appVersion: 'v0.8.1',
+            appVersion: 'v0.8.2',
             isMenuOpen: false,
-            darkmode: localStorage.darkmode === 'true' || true
+            darkmode: !localStorage.darkmode ? true : localStorage.darkmode === 'true' // Default to true if not set, otherwise convert string to boolean
         }
     },
     mounted() {

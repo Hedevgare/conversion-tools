@@ -2,8 +2,8 @@
 export default {
     data() {
         return {
-            precision: localStorage.precision || 10,
-            darkmode: localStorage.darkmode === 'true' || true
+            precision: localStorage.precision || 3, // Default to 3 precision decimal places if not set
+            darkmode: !localStorage.darkmode ? true : localStorage.darkmode === 'true' // Default to true if not set, otherwise convert string to boolean
         }
     },
     watch: {

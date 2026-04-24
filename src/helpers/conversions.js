@@ -185,7 +185,7 @@ export function startConversion(fromUnit, toUnit, value, shouldRound = false) {
     if (validateUnit(fromUnit, value)) {
         if (!conversions[fromUnit][toUnit]) return;
         let conversion = conversions[fromUnit][toUnit](value);
-        let precision = localStorage.precision || 10;
+        let precision = localStorage.precision || 3; // Default to 3 precision decimal places if not set
         if (shouldRound) {
             return Number(conversion.toFixed(precision));
         } else {
