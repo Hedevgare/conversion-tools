@@ -22,6 +22,7 @@ export default {
             let favorites = JSON.parse(localStorage.getItem("favoriteUnits") || '[]');
             this.isFavorite ? favorites.push(this.name) : favorites.splice(favorites.indexOf(this.name), 1);
             localStorage.setItem("favoriteUnits", JSON.stringify(favorites));
+            window.dispatchEvent(new CustomEvent('favoriteUnits-updated', { detail: favorites }));
         }
     }
 }

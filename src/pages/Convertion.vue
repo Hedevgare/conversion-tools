@@ -11,6 +11,14 @@ export default {
             type: String,
             required: true
         },
+        url: {
+            type: String,
+            required: false
+        },
+        icon: {
+            type: String,
+            required: false
+        },
         units: {
             type: Array,
             required: true

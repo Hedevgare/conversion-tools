@@ -1,6 +1,8 @@
 export default {
     numbers: {
-        name: 'Number',
+        name: 'Numbers',
+        url: '/',
+        icon: 'hashtag',
         units: [
 			{ unit: 'Binary', symbol: '0b' },
 			{ unit: 'Octal', symbol: '0o' },
@@ -13,6 +15,8 @@ export default {
     },
     length: {
         name: 'Length',
+        url: '/length',
+        icon: 'ruler',
         units:[
 			{ unit: 'Meters', symbol: 'm' },
 			{ unit: 'Millimeters', symbol: 'mm' },
@@ -29,6 +33,8 @@ export default {
     },
     temperature: {
         name: 'Temperature',
+        url: '/temperature',
+        icon: 'temperature-half',
         units: [
             { unit: 'Celsius', symbol: 'ºC' },
             { unit: 'Fahrenheit', symbol: 'ºF' },
@@ -41,6 +47,8 @@ export default {
     },
     volume: {
         name: 'Volume',
+        url: '/volume',
+        icon: 'flask',
         units: [
             { unit: 'Litres', symbol: 'L' },
             { unit: 'Gallons', symbol: 'gal' },
@@ -52,6 +60,8 @@ export default {
     },
     weight: {
         name: 'Weight',
+        url: '/weight',
+        icon: 'weight-hanging',
         units: [
 			{ unit: 'Grams', symbol: 'g' },
             { unit: 'Kilograms', symbol: 'kg' },
@@ -63,6 +73,8 @@ export default {
     },
     time: {
         name: 'Time',
+        url: '/time',
+        icon: 'hourglass',
         units: [
             { unit: 'Seconds', symbol: 's' },
             { unit: 'Minutes', symbol: 'min' },
@@ -75,6 +87,8 @@ export default {
     },
     area: {
         name: 'Area',
+        url: '/area',
+        icon: 'arrows-left-right-to-line',
         units: [
             { unit: 'Square Meters', symbol: 'm²' },
             { unit: 'Ares', symbol: 'a' },
@@ -85,6 +99,8 @@ export default {
     },
     velocity: {
         name: 'Velocity',
+        url: '/velocity',
+        icon: 'tachometer-alt',
         units: [
             { unit: 'Kilometers per Hour', symbol: 'km/h' },
             { unit: 'Miles per Hour', symbol: 'mi/h' },
