@@ -2,7 +2,7 @@
 export default {
     data() {
         return {
-            appVersion: 'v0.8.0',
+            appVersion: 'v0.9.0',
             isMenuOpen: false,
             darkmode: localStorage.darkmode === 'true'
         }
