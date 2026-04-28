@@ -1,13 +1,23 @@
 <script>
 import ConversionBlock from '../components/ConversionBlock.vue';
+import FavoriteUnit from '../components/FavoriteUnit.vue';
 export default {
     components: {
-        'conversion-block': ConversionBlock
+        'conversion-block': ConversionBlock,
+        'favorite-unit': FavoriteUnit
     },
     props: {
         name: {
             type: String,
             required: true
+        },
+        url: {
+            type: String,
+            required: false
+        },
+        icon: {
+            type: String,
+            required: false
         },
         units: {
             type: Array,
@@ -30,6 +40,8 @@ export default {
 </script>
 
 <template>
-    <h1 class="title">{{ this.$props.name }} Converter</h1>
+    <h1 class="title">{{ this.$props.name }} Converter
+        <favorite-unit :name="this.$props.name" />
+    </h1>
     <conversion-block :startFrom="this.$props.startFromUnit" :startTo="this.$props.startToUnit" :units="this.$props.units" :shouldRound="this.$props.shouldRound" />
 </template>

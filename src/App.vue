@@ -1,15 +1,22 @@
 <script>
+import routesData from "./helpers/routesData";
+
 export default {
     data() {
         return {
-            appVersion: 'v0.8.2',
+            routesData,
+            appVersion: 'v0.9.1',
             isMenuOpen: false,
-            darkmode: !localStorage.darkmode ? true : localStorage.darkmode === 'true' // Default to true if not set, otherwise convert string to boolean
+            darkmode: !localStorage.darkmode ? true : localStorage.darkmode === 'true',
+            favoriteUnits: JSON.parse(localStorage.getItem("favoriteUnits") || '[]') // Default to true if not set, otherwise convert string to boolean
         }
     },
     mounted() {
         window.addEventListener('darkmode-toggle', (event) => {
             this.darkmode = event.detail;
+        });
+        window.addEventListener('favoriteUnits-updated', (event) => {
+            this.favoriteUnits = event.detail;
         });
     },
     computed: {
@@ -36,9 +43,6 @@ export default {
                 <div class="bar-2"></div>
                 <div class="bar-3"></div>
             </div>
-            <!-- <div class="header-title">
-                <p>Conversion Tools</p>
-            </div> -->
             <div class="definitions-button" @click="openDefinitions">
                 <font-awesome-icon :icon="['fa', 'cog']" />
             </div>
@@ -46,53 +50,26 @@ export default {
         <hr />
     </div>
     <section class="menu" :class="{ 'open': isMenuOpen, 'dark': darkmode }">
+        <div v-if="favoriteUnits.length > 0" class="menu-header">
+            <p>Favorite conversions</p>
+        </div>
         <div class="menu-container">
-            <div class="menu-item">
-                <RouterLink class="header-link" to="/" @click="toggleMenu">
-                    <font-awesome-icon :icon="['fa', 'hashtag']" />
-                    Numbers
+            <div class="menu-item" v-for="favoriteUnit in favoriteUnits" :key="favoriteUnit">
+                <RouterLink class="header-link" :to="`${routesData[favoriteUnit.toLowerCase()].url}`"
+                    @click="toggleMenu">
+                    <font-awesome-icon :icon="['fa', routesData[favoriteUnit.toLowerCase()].icon]" />
+                    {{ favoriteUnit }}
                 </RouterLink>
             </div>
-            <div class="menu-item">
-                <RouterLink class="header-link" to="/length" @click="toggleMenu">
-                    <font-awesome-icon :icon="['fa', 'ruler']" />
-                    Lengths
-                </RouterLink>
-            </div>
-            <div class="menu-item">
-                <RouterLink class="header-link" to="/temperature" @click="toggleMenu">
-                    <font-awesome-icon :icon="['fa', 'temperature-half']" />
-                    Temperatures
-                </RouterLink>
-            </div>
-            <div class="menu-item">
-                <RouterLink class="header-link" to="/volume" @click="toggleMenu">
-                    <font-awesome-icon :icon="['fa', 'flask']" />
-                    Volumes
-                </RouterLink>
-            </div>
-            <div class="menu-item">
-                <RouterLink class="header-link" to="/weight" @click="toggleMenu">
-                    <font-awesome-icon :icon="['fa', 'weight-hanging']" />
-                    Weights
-                </RouterLink>
-            </div>
-            <div class="menu-item">
-                <RouterLink class="header-link" to="/time" @click="toggleMenu">
-                    <font-awesome-icon :icon="['fa', 'hourglass']" />
-                    Times
-                </RouterLink>
-            </div>
-            <div class="menu-item">
-                <RouterLink class="header-link" to="/area" @click="toggleMenu">
-                    <font-awesome-icon :icon="['fa', 'arrows-left-right-to-line']" />
-                    Areas
-                </RouterLink>
-            </div>
-            <div class="menu-item">
-                <RouterLink class="header-link" to="/velocity" @click="toggleMenu">
-                    <font-awesome-icon :icon="['fa', 'tachometer-alt']" />
-                    Velocities
+        </div>
+        <div class="menu-header">
+            <p>All conversions</p>
+        </div>
+        <div class="menu-container">
+            <div class="menu-item" v-for="route in Object.values(routesData)" :key="route.name">
+                <RouterLink class="header-link" :to="`${route.url}`" @click="toggleMenu">
+                    <font-awesome-icon :icon="['fa', route.icon]" />
+                    {{ route.name }}
                 </RouterLink>
             </div>
         </div>
@@ -102,7 +79,7 @@ export default {
     </section>
     <div class="footer" :class="{ 'dark': darkmode }">
         <p>
-            <a href="https://hedegaremoreira.com" target="_blank">Hedegare</a> {{ footer }} - 
+            <a href="https://hedegaremoreira.com" target="_blank">Hedegare</a> {{ footer }} -
             <a href="https://coff.ee/hedegare" target="_blank" rel="noopener" title="Buy me a coffee">
                 <font-awesome-icon :icon="['fa', 'coffee']" />
                 <span class="footer-tipjar-text">Buy me a coffee</span>

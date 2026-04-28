@@ -6,7 +6,8 @@ import "./styles/main.css";
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHashtag, faRuler, faTemperatureHalf, faFlask, faWeightHanging, faClock, faArrowsLeftRightToLine, faHourglass, faCoffee, faTachometerAlt, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faHashtag, faRuler, faTemperatureHalf, faFlask, faWeightHanging, faClock, faArrowsLeftRightToLine, faHourglass, faCoffee, faTachometerAlt, faCog, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { far, faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 
 import Convertion from "./pages/Convertion.vue";
 import Definitions from "./pages/Definitions.vue";
@@ -31,7 +32,7 @@ const router = createRouter({
     routes
 });
 
-library.add(faHashtag, faRuler, faTemperatureHalf, faFlask, faWeightHanging, faClock, faArrowsLeftRightToLine, faHourglass, faCoffee, faTachometerAlt, faCog);
+library.add(faHashtag, faRuler, faTemperatureHalf, faFlask, faWeightHanging, faClock, faArrowsLeftRightToLine, faHourglass, faCoffee, faTachometerAlt, faCog, faHeart, farHeart);
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)

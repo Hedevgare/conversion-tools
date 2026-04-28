@@ -160,6 +160,12 @@ input:focus {
     display: block;
 }
 
+.menu-header {
+    margin: 15px 30px;
+    border-bottom: 1px solid var(--text);
+    font-size: 20px;
+}
+
 .menu-container {
     display: flex;
     flex-wrap: wrap;
