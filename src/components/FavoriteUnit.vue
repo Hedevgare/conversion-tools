@@ -30,8 +30,8 @@ export default {
 
 <template>
     <span @click="toggleFavorite">
-        <font-awesome-icon v-if="isFavorite" :icon="['fa', 'heart']" />
-        <font-awesome-icon v-else :icon="['far', 'heart']" />
+        <font-awesome-icon v-if="isFavorite" :icon="['fa', 'star']" />
+        <font-awesome-icon v-else :icon="['far', 'star']" />
     </span>
 </template>
 
